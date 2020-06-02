@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州青年</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/idangerous.swiper.min.js"></script>
+    <script src="../js/common/common.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="header-wrapper">
+            <div class="logo">
+                <img src="../images/common/logo.jpg" alt="">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a target="_blank" href="../index.html">首页</a></li>
+                    <li><a target="_blank" href="../volunteer.html">志愿时</a></li>
+                    <li><a target="_blank" href="../youth.html">青创汇</a></li>
+                    <li><a target="_blank" href="../activity.html">U友缘</a></li>
+                    <li class="active"><a href="index.html">广州青年</a></li>
+                    <li><a target="_blank" href="#">团务系统</a></li>
+                    <li style="margin-right:0px;"><a target="_blank" href="#">论坛</a></li>
+                </ul>
+            </div>
+            <div class="header-r">
+                <a href="javascript:;">
+                    <img src="../images/common/sina.jpg" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="../images/common/wechat.jpg" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="../images/common/user.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="sub_nav">
+            <div class="subnav_wrapper">
+                <ul>
+                    <li class="active"><a href="#">广州青年首页</a></li>
+                    <li><a href="#">不忘初心 牢记使命</a></li>
+                    <li><a href="#">粤港澳大湾区</a></li>
+                    <li><a href="#">穗团要闻</a></li>
+                    <li><a href="#">公告栏</a></li>
+                    <li><a href="#">基层快讯</a></li>
+                    <li><a href="#">直属单位快讯</a></li>
+                    <li><a href="#">文件资料</a></li>
+                    <li><a href="#">志愿时</a></li>
+                    <li style="margin-right:0px;"><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="main-wrapper">
+            <div class="mailBox" id="mailBox" style="width: 800px;margin:0 auto;">
+                <link rel="stylesheet" href="css/common/form.css">
+                <style>
+                    .mailBox {
+                        padding: 20px 40px;
+
+                    }
+
+                    .mailBox label {
+                        width: 64px;
+                        text-align: left;
+                    }
+
+                    .mailBox input {
+                        width: 280px;
+                    }
+
+                    .mailBox textarea {
+                        width: 750px;
+                    }
+
+                    .mailBox .title {
+                        text-align: left;
+                    }
+
+                    .mailBox .btn-submit {
+                        margin-left: 240px;
+                        font-weight: bold;
+                    }
+
+                    .mailBox .btn-reset {
+                        background: #BFBEBE;
+                        margin-left: 100px;
+                    }
+
+                    .mailBox .form-row {
+                        float: left;
+                        width: 50%;
+                        overflow: hidden;
+                    }
+                </style>
+                <div class="form-page">
+                    <div class="title">意见征集</div>
+                    <div>为做好“不忘初心、牢记使命”主题教育征求意见工作，我委设置征求意见箱，欢迎广大党员群众对我委领导班子、领导干部的突出问题和改进作风、改进工作等提出意见或建议。</div>
+                    <br />
+                    <div class="form-row" style="width: 100%">
+                        <label style="float:none;display: block;width: auto;text-align: left;">您的意见及建议：</label>
+                        <textarea placeholder="至少12个字符（200字以内）" rows="5" id="opinion"></textarea>
+                        <div class="tip"></div>
+                    </div>
+                    <div class="tip"></div>
+                    <div class="form-row">
+                        <label>姓名：</label>
+                        <input type="text" id="name">
+                        <div class="tip"></div>
+                    </div>
+                    <div class="form-row">
+                        <label>电话：</label>
+                        <input type="text" id="phone">
+                        <div class="tip"></div>
+                    </div>
+                    <div class="form-row">
+                        <label>邮箱：</label>
+                        <input type="text" id="email">
+                        <div class="tip"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <label>验证码：</label>
+                        <input type="text" style="width: 180px;margin-right: 10px;" id="yzm">
+                        <img src="http://iph.href.lu/86x48" width="86" style="vertical-align: middle;" alt="">
+                        <div class="tip"></div>
+                    </div>
+                    <div class="form-row" style="width: 100%">
+                        <button class="button btn-submit" id="submit">提交</button>
+                        <button class="button btn-reset">重置</button>
+                    </div>
+                </div>
+                <script>
+                    $('#submit').on('click', function () {
+                        var times = new Date()
+                        var timer = times.format("yyyy-MM-ddThh:mm:ss.SZ")
+                        var data = {
+                            email: document.getElementById('email').value,
+                            name: document.getElementById('name').value,
+                            phone: document.getElementById('phone').value,
+                            opinion: document.getElementById('opinion').value,
+                            yzm: document.getElementById('yzm').value,
+                        }
+                        var formData = {
+                            "createTime": timer,
+                            "email": data.email,
+                            "id": "1",
+                            "loginCode": data.yzm,
+                            "memberId": "string",
+                            "name": data.name,
+                            "opinion1": data.opinion,
+                            "opinion2": "string",
+                            "opinion3": "string",
+                            "opinion4": "string",
+                            "otherOpinion": "string",
+                            "passenger": {},
+                            "phone": data.phone,
+                            "reply": "string",
+                            "replyMan": "string",
+                            "replyManId": "string",
+                            "replyTime": "2020-03-26T09:33:35.243Z",
+                            "status": 0
+                        };
+                        $.ajax({
+                            url: APIGATEWAY + '/hdgl/grassrootsOpinion/insert?code=3',
+                            type: 'POST',
+                            contentType: 'application/json',
+                            xhrFields: {
+                                withCredentials: true
+                            },
+                            data: JSON.stringify(formData),
+                            success: function (data) {
+                                if (data.code == 'success') {
+                                    alert('发送成功')
+                                } else {
+                                    alert(data.message);
+
+                                }
+                            },
+                            error: function () {
+                                console.log("请求错误");
+                            }
+                        })
+                    });
+                </script>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer-link">
+            <div class="link-wrapper">
+                <h3>网址导航</h3>
+                <a href="#">直属单位</a>
+                <a href="#">市青年文化宫</a>
+                <a href="#">市少年宫</a>
+                <a href="#">市团校</a>
+                <a href="#">广青报</a>
+                <a href="#">市青年就业创业服务中心</a>
+                <a href="#">市志愿者行动指中心</a>
+            </div>
+        </div>
+        <div class="foot-box">
+            <div class="b-nav">
+                <ul>
+                    <li><a href="#">关于我们</a><span>|</span></li>
+                    <li><a href="#">站内地图</a><span>|</span></li>
+                    <li><a href="#">网址导航</a><span>|</span></li>
+                    <li><a href="#">网站声明</a><span>|</span></li>
+                    <li><a href="#">使用帮助</a></li>
+                </ul>
+            </div>
+            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+            <p>地址:广州市人民北路875号4-5楼 邮编:510170 E-mail:1234556@163.com</p>
+        </div>
+    </div>
+</body>
+
+</html>

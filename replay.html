@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap.css">
+    <link href="dist/summernote.css" rel="stylesheet">
+	 <link rel="stylesheet" href="css/common/common.css">
+	<link rel="stylesheet" href="css/index.css">
+    <script src="js/js/jquery.min.js"></script>
+    <script src="js/js/bootstrap.min.js"></script>
+    <script src="dist/summernote.js"></script>
+	<script src="dist/lang/summernote-zh-CN.js"></script> 
+	<script src="js/js/jquery.min.js"></script>
+    <script src="js/js/bootstrap.min.js"></script>
+	<script src="dist/summernote.js"></script>
+	<script src="js/common/jsrender.min.js"></script>
+	<script src="js/common/common.js"></script>
+	<script src="js/common/jquery.cookie.js"></script>
+	<script src="js/morejs/replay.js"></script>
+	<script src="dist/lang/summernote-zh-CN.js"></script> 
+	<script src="js/common/jquery.sPage.js"></script>
+<style>
+	.m{ width: 800px; margin-left: auto; margin-right: auto;}
+	.input-90{
+		width: 596px;
+		margin-bottom: 20px;
+		height: 50px;
+	}
+	::-webkit-input-placeholder{
+		text-align: right;
+		padding-right: 20px;
+	}
+	:-moz-placeholder{
+		text-align: right;
+        padding-right: 20px;
+	}
+	::-moz-placeholder{
+		text-align: right;
+        padding-right: 20px;
+	}
+	:-ms-input-placeholder{
+		text-align: right;
+        padding-right: 20px;
+	}
+	select{
+		width: 200px;
+		font-size:12px;
+		height: 50px;
+		line-height:30px;
+	}
+	.button{
+		width: 400px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.button-tiezi{
+		background-color: #E70012;
+		border: none;
+		color:#fff;
+		outline: none;
+		width: 140px;
+		height: 36px;
+		font-size: 20px;
+		border-radius:4px;
+	}
+	.button-quxiao{
+		background-color: #fff;
+		border:1px solid #ccc;
+		/* border: none; */
+		color:#ccc;
+		outline: none;
+		width: 140px;
+		height: 36px;
+		font-size: 20px;
+		border-radius:4px;
+	}
+</style>
+<script>
+$(function(){
+ $('.summernote').summernote({
+        height: 300,
+        tabsize: 2,
+        lang: 'zh-CN'
+    });
+});
+</script>
+</head>
+<body>
+	    <div id="header" style="margin-bottom:30px;">
+	    <div class="top">
+	        <div class="top-wrapper">
+	            <div class="logo">
+	                <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+	            </div>
+	            <div class="r-linkbox">
+	                <ul>
+	                    <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+	                    <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+	                    <li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+	                </ul>
+	                <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+	            </div>
+	            <div style="clear:both"></div>
+	        </div>
+	    </div>
+	    <div class="nav">
+	        <div class="nav-wrapper">
+	            <div class="nav-list">
+	                <ul>
+	                    <li><a href="index.html">首页</a></li>
+	                    <li><a href="volunteer.html">志愿时</a></li>
+	                    <li><a href="youth.html">青创汇</a></li>
+	                    <li><a href="activity.html">U友缘</a></li>
+	                    <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+	                    <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+	                    <li class="active"><a href="forum.html">论坛</a></li>
+	                </ul>
+	            </div>
+	            <div class="search">
+	                <input type="text" placeholder="输入需要查找的信息">
+	                <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<div class="m">	
+	<div class="replays">
+	<script type="text/x-jsrender" id="hotLt">
+		{{for}}
+		<p style="color:#333;"><span style="color:#ff8b3d;font-weight: 700;">[{{:moduleName}}]</span>{{:postTitle}}</p>
+		<p>回复：“</p>
+		<p style="text-indent: 2em;">{{:content}}</p>
+		<p style="text-indent: 2em;">”</p>
+		{{/for}}
+	</script>
+	</div>
+	<div class="summernote"></div>
+	<div class="button">
+	<a><button class="button-tiezi">回复</button></a>
+	<a href="luntanbk.html"><button class="button-quxiao">取消</button></a>
+	</div>
+</div>
+</body>
+</html>

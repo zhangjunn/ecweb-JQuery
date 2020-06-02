@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/common/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="js/common/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<title>登陆情况</title>
+	</head>
+	<script type="text/javascript">
+		$(function(){
+			if($.cookie('orignUrl') != null){
+				orignUrl = $.cookie('orignUrl');
+			}
+		})
+	</script>
+	<body onload="checkUserInfo()">
+		<div id="tips"></div>
+		<div id="jump"><a href="#" onclick="ssoLogin()">点击重新登陆</a></div>
+		<div id="jump"><a href="#" onclick="jumpOrign()">点击跳转原来页面</a></div>
+	</body>
+</html>

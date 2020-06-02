@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap.css">
+    <link href="dist/summernote.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/common/common.css">
+	<link rel="stylesheet" href="css/index.css">
+    <script src="js/js/jquery.min.js"></script>
+    <script src="js/js/bootstrap.min.js"></script>
+	<script src="dist/summernote.js"></script>
+	<script src="js/common/jsrender.min.js"></script>
+	<script src="js/common/common.js"></script>
+	<script src="js/common/jquery.cookie.js"></script>
+	<script src="js/morejs/editor.js"></script>
+    <script src="dist/lang/summernote-zh-CN.js"></script> 
+<style>
+	.m{ width: 800px; margin-right: auto; margin-left: auto;}
+	.input-90{
+		width: 595px;
+		margin-bottom: 20px;
+		height: 30px;
+	}
+	::-webkit-input-placeholder{
+		text-align: left;
+		padding-left: 20px;
+	}
+	:-moz-placeholder{
+		text-align: left;
+        padding-left: 20px;
+	}
+	::-moz-placeholder{
+		text-align: left;
+        padding-left: 20px;
+	}
+	:-ms-input-placeholder{
+		text-align: left;
+        padding-left: 20px;
+	}
+	select{
+		width: 200px;
+		font-size:12px;
+		height: 30px;
+		line-height:30px;
+	}
+	.button{
+		width: 400px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.button-tiezi,.button-quxiao{
+		background-color: #ff8b3d;
+		color:#fff;
+		outline: none;
+		width: 100px;
+		height: 40px;
+		font-size: 20px;
+	}
+	.button-quxiao{
+		background-color: #C5C5C5;
+	}
+	.button-tiezi{
+		background-color: #E70012;
+		border: none;
+		color:#fff;
+		outline: none;
+		width: 140px;
+		height: 36px;
+		font-size: 20px;
+		border-radius:4px;
+	}
+	.button-quxiao{
+		background-color: #fff;
+		border:1px solid #ccc;
+		/* border: none; */
+		color:#ccc;
+		outline: none;
+		width: 140px;
+		height: 36px;
+		font-size: 20px;
+		border-radius:4px;
+	}
+</style>
+
+<script>
+$(function(){
+ $('.summernote').summernote({
+        height: 300,
+        tabsize: 2,
+		lang: 'zh-CN'
+    });
+});
+</script>
+
+</head>
+
+<body>
+	    <div id="header" style="margin-bottom:30px;">
+	    <div class="top">
+	        <div class="top-wrapper">
+	            <div class="logo">
+	                <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+	            </div>
+	            <div class="r-linkbox">
+	                <ul>
+	                    <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+	                    <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+	                    <li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+	                </ul>
+	                <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+	            </div>
+	            <div style="clear:both"></div>
+	        </div>
+	    </div>
+	    <div class="nav">
+	        <div class="nav-wrapper">
+	            <div class="nav-list">
+	                <ul>
+	                    <li><a href="index.html">首页</a></li>
+	                    <li><a href="volunteer.html">志愿时</a></li>
+	                    <li><a href="youth.html">青创汇</a></li>
+	                    <li><a href="activity.html">U友缘</a></li>
+	                    <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+	                    <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+	                    <li class="active"><a href="forum.html">论坛</a></li>
+	                </ul>
+	            </div>
+	            <div class="search">
+	                <input type="text" placeholder="输入需要查找的信息">
+	                <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<div class="m">		
+    <div class="new-title" style="margin-top: 30px;margin-bottom:30px;font-size: 20px;">发表新主题</div>
+    <input type="text" placeholder="标题" class="input-90" maxlength="20">
+    <select id="" name="" class="select-list">
+		<script type="text/x-jsrender" id="select">
+		 <option value="1" style="color: #b6b6b6" disabled selected>请选择板块</option>
+		 <option  value="{{:#getIndex()+1}}">{{:name}}</option>
+	</script>
+    </select>
+	<div class="summernote"></div>
+	<div class="button">
+    <a><button class="button-tiezi">发表帖子</button></a>
+	<a href="luntanbk.html"><button class="button-quxiao">取消</button></a>
+	</div>
+</div>
+</body>
+</html>

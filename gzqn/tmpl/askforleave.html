@@ -1,0 +1,186 @@
+<div class="askForLeaveBox" id="askForLeaveBox" style="max-width: 980px;">
+	<link rel="stylesheet" href="css/common/form.css">
+	<style>
+		.askForLeaveBox{
+			padding:20px 40px;
+		}
+		.askForLeaveBox .btn-submit{
+			margin-left: 200px;
+			font-weight: bold;
+		}
+		.askForLeaveBox .btn-reset{
+			background: #BFBEBE;
+			margin-left: 100px;
+		}
+		.askForLeaveBox textarea{
+			font-size: 20px;
+			width: 700px;
+			height: 230px;
+		}
+		.askForLeaveBox .toolbar{
+			border:1px solid rgba(204,204,204,1);
+			border-radius: 4px;
+			text-align: right;
+			margin:10px 0;
+			padding:12px;
+		}
+		.askForLeaveBox .btn-upload{
+			background-color: transparent;
+			border:none;
+			width: 42px;
+			height: 42px;
+			padding: 0;
+			position: relative;
+		}
+		.fileList{
+			border-radius: 4px;
+			border:1px dashed #F65469;
+			margin:10px 0;
+		}
+		.fileList li{
+			padding:12px;
+			overflow: hidden;
+		}
+		.fileList .info{
+			 float: left;
+			 line-height: 40px;
+			 font-size: 20px;
+		}
+		.fileList .info i{margin-right: 15px;}
+		.fileList .info img{vertical-align: middle;}
+		.fileList .status{
+			line-height: 40px;
+			font-size: 15px;
+			 float: right;
+		}
+		input::placeholder {
+			color: #ccc;
+			font-size: 16px;
+		}
+		.proxyPerson{
+			width:700px;
+		}
+		#imgLoading{
+			margin-left: 12px; display: none;
+			position: absolute;
+			top: 12px;
+			right: 8px;
+			-webkit-animation: spin 1s linear infinite;
+			animation: spin 1s linear infinite;
+		}
+		@keyframes spin {
+		  from {
+			transform: rotate(0deg);
+		  }
+		  to {
+			transform: rotate(360deg);
+			transition: all 1s;
+		  }
+		}
+	</style>
+	<div class="form-page">
+		<!-- <form id="postForm" method="POST" enctype="multipart/form-data"> -->
+			<div class="title">告假单</div>
+			<div class="form-row">
+				<textarea name="remark" id="remark" placeholder="备注"></textarea>
+			</div>
+			<div class="form-row">
+				<input class="proxyPerson" style="width: 700px; margin-top: 5px;" type="text" placeholder="如需代参会人请在此填写代参会人姓名"/>
+			</div>
+			<div class="form-row toolbar"> 
+				<button class="btn-upload" title="上传附件">
+					<img src="images/upload.png"  width="42" alt="">
+					<input type="file" id="leaveAttach" style="opacity: 0;position: absolute;left: 0;top: 0;">
+				</button>
+			</div>
+			<div class="form-row fileList" style="display: none;">
+				<ul id="leaveAttachItem">
+					
+				</ul>
+			</div>
+			<div class="form-row" style="margin-top:30px;">
+				<button class="button btn-submit" id="submit" style="position: relative;">提交<img id="imgLoading" width="16" height="16" src="../gzqn/images/loading4.png" /></button>
+				<button class="button btn-reset">重置</button>
+			</div>
+		<!-- </form> -->
+	</div>
+	<script>
+		$(function() {				
+			var meetId = $('#askForLeaveBox').parent().parent().attr('meeting');
+			$("#leaveAttach").on('change',function(){
+				var file = this.files[0]
+				$('#leaveAttachItem').parent().show();
+				$('#leaveAttachItem').html(`<li>
+					<span class="info"><i><img src="images/ext-word.png" width="40" alt=""></i>${file.name}</span>
+					<span class="status">${parseInt(file.size/1000)}KB</span>
+				</li>`)
+			})
+			$('#askForLeaveBox .btn-reset').on('click',function(){
+				$('#askForLeaveBox #remark').val('')
+				$('#askForLeaveBox #leaveAttach').val('')
+				$('#leaveAttachItem').parent().hide();
+			})
+			
+			$('#askForLeaveBox .btn-submit').on('click',function(){
+				var remark = $('#askForLeaveBox #remark').val();
+				var files =  $('#askForLeaveBox #leaveAttach')[0].files
+				if(remark && files.length){
+					$("#imgLoading").show();
+					 insertPerson(meetId,remark);
+					return false;
+				}
+				else{
+					alert('请填写备注并上传请假条附件后提交！');
+				}
+			})
+			
+			
+			function insertPerson(meetingId,remark){				
+				var userInfo = getUserInfo();
+				remark = remark || '';
+				var proxyPerson = $(".proxyPerson").val();
+				var status = 0;
+				if(proxyPerson){
+					status = 2;
+				}else{
+					status = 3;
+				}
+				var formdata = new FormData();
+				var filename = $('#leaveAttach')[0].files[0].name;
+				formdata.append('file', $('#leaveAttach')[0].files[0]); 
+				formdata.append("meetingJoinMan" ,$(".proxyPerson").val());
+				
+				formdata.append("id",uuid());
+				formdata.append("fileName",filename);
+				formdata.append("meetingId",meetingId);
+				formdata.append("personId",userInfo.personId);
+				formdata.append("phone",userInfo.personMobile);
+				formdata.append("remark",remark);
+				formdata.append("status",status);
+				formdata.append("type",1);
+				 // 带参会人2，没有参会人3
+				 
+				 alert("提交成功");
+				 
+				$.ajax({
+					url: APIGATEWAY + '/hdgl/meetingJoinMan/importFile',
+					cache: false,
+					type:"post",
+					contentType:false,
+                    processData: false,
+					data: formdata,
+					success: function(result) {
+						alert("提交成功");
+						$("#imgLoading").hide()
+						$('#askForLeaveBox #remark').val('')
+						$('#askForLeaveBox #leaveAttach').val('')
+						$('#leaveAttachItem').parent().hide();
+						$('body').removeClass('pop-lock');
+						$(".pop").hide();
+					}
+				})
+        	}
+		})
+		
+	</script>
+</div>

@@ -1,0 +1,246 @@
+.qmcy{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+}
+.qmcy-left{
+    width: 900px;
+}
+.logos-title{
+    width: 100%;
+    border-bottom: 1px dashed #e70012;
+}
+.logos-title{
+    display: flex;
+	line-height: 50px;
+}
+.xing-time{
+    display: flex;
+}
+.sc-jb{
+    display: flex;
+    width:200px;
+    text-align: right;
+    font-size: 12px;
+}
+.logos-title-one{
+    display: flex;
+	margin-top: 16px;
+}
+.wenzhang{
+    color: #333;
+}
+.wz-dl{
+    text-indent: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width:800px;
+    margin: 20px auto 10px;
+}
+.pinglun{
+    display: flex;
+    height: 40px;
+    position: relative;
+}
+.pinglun-sr{
+    width:700px;
+    height: 30px;
+    border: 1px solid #eee;
+}
+.pinglun-sr::placeholder{
+    color: #ccc;
+    padding-left: 10px;
+}
+.pinglun-fb{
+    padding-left:20px;
+    padding-right:20px;
+    background-color: #e70012; 
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+}
+.pinglun-pic{
+    width:70px;
+    text-align: center;
+    margin-top: -10px;
+    /* height: 30px; */
+}
+.red-tx{
+    display: none;
+    color: #fa311a;
+    padding-left: 70px;
+    border-bottom: 1px dashed #e70012;
+    padding-bottom: 30px;
+}
+.pepoel-pl{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f7f7f7;
+}
+.pepoel-middle{
+    margin-top: -5px;
+    padding-left: 20px;
+}
+.pepoel-middle-top{
+    width: 700px;
+    color: #fa311a;
+    font-weight: 700;
+}
+.pepoel-right{
+    /* width: 150px; */
+}
+.pepoel-sf{
+    width: 50px;
+    border: 1px solid #e70012;
+    color: #e70012;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 auto;
+	text-align: center;
+
+}
+.logo-title{
+    display: flex;
+    text-align: center;
+}
+.qmcy-right{
+    width: 300px;
+}
+.qmcy-right-box{
+    width: 280px;
+    height: 350px;
+    border: 1px solid #eee;
+    margin-left: 20px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #eee;
+}
+.rtlt{
+    width: 280px;
+    height: 350px;
+    border: 1px solid #eee;
+    margin-left: 20px;
+    text-align: left;
+    box-shadow: 1px 1px 1px 1px #eee;
+    margin-top: 30px;
+}
+.gz{
+    width: 80px;
+    border-radius: 3px;
+    color: #fff;
+    height: 30px;
+    line-height: 20px;
+    background-color: #e70012;
+}
+.rtlt-title{
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+    border-bottom: 1px dashed #eee;
+    width: 90%;
+    height: 50px;
+    line-height:50px;
+    margin: 0 auto;
+}
+.zy{
+    width: 80px;
+    border-radius: 3px;
+    color: #e70012;
+    height: 30px;
+    line-height: 20px;
+    border: 1px solid #e70012;
+    background-color: #fff;
+}
+.gz-zy{
+    margin-top: 32px;
+}
+.rtlt-h{
+    height: 32px;
+    line-height: 32px;
+}
+.rtlts-color{
+    color: #666;
+}
+.tjbk{
+    width: 280px;
+    border: 1px solid #eee;
+    margin-left: 20px;
+    text-align: left;
+    box-shadow: 1px 1px 1px 1px #eee;
+    margin-top: 30px;
+    position: relative;
+}
+.rtlt-li{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* myluntan页面样式 */
+.qx-gzs{
+    color: #fff;
+    background-color: #ccc;
+    width: 70px;
+    height: 25px;
+    border-radius: 2px;
+}
+.qx-gzs-df{
+    background-color: #fa311a;
+    width: 70px;
+    height: 25px;
+    color: #fff;
+    border-radius: 2px;
+}
+.remenzhuti{
+	display: inline-block;
+	width: auto;
+	height:auto;
+	color: #333;
+}
+.rtlt-li-a{
+	display: inline-block;
+	width: 100%;
+	height:auto;
+	color: #333;
+	display: flex;
+}
+.pic-middle{
+	vertical-align: middle;
+}
+.allmodel{
+    height: 300px;
+    overflow: hidden;
+}
+.btn-xl{
+text-align: center;
+font-size:28px;
+color:#ccc;
+cursor: pointer;
+}
+.c{
+    height: auto;
+}
+.qxgz{
+    width: 80px;
+    border-radius: 3px;
+    color: #fff;
+    height: 30px;
+    line-height: 20px;
+    background-color: #ccc;
+}
+.collect{
+    display: none;
+}
+.report{
+    position:absolute;
+    width: 100px;
+    height: 300px;
+    border: 1px solid #ccc;
+    top:-10px;
+    right: 200px;
+}
+.red-color{
+    color: #e70012;
+}
+.gray-color{
+    color: #999;
+}

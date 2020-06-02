@@ -1,0 +1,128 @@
+<div class="askForLeaveBox" id="meetinInfo" style="max-width: 980px;">
+	<link rel="stylesheet" href="css/common/form.css">
+	<style>
+		.askForLeaveBox{
+			padding:20px 40px;
+		}
+		.askForLeaveBox .btn-submit{
+            opacity: 0;
+			margin-left: 200px;
+			font-weight: bold;
+		}
+		.askForLeaveBox .btn-reset{
+            opacity: 0;
+			background: #BFBEBE;
+			margin-left: 100px;
+		}
+		.askForLeaveBox textarea{
+			font-size: 20px;
+			width: 700px;
+			height: 230px;
+		}
+		.askForLeaveBox .toolbar{
+			border:1px solid rgba(204,204,204,1);
+			border-radius: 4px;
+			text-align: right;
+			margin:10px 0;
+			padding:12px;
+		}
+		.askForLeaveBox .btn-upload{
+			background-color: transparent;
+			border:none;
+			width: 42px;
+			height: 42px;
+			padding: 0;
+		}
+		.fileList{
+			border-radius: 4px;
+			border:1px dashed #F65469;
+			margin:10px 0;
+		}
+		.fileList li{
+			padding:12px;
+			overflow: hidden;
+		}
+		.fileList .info{
+			 float: left;
+			 line-height: 40px;
+			 font-size: 20px;
+		}
+		.fileList .info i{margin-right: 15px;}
+		.fileList .info img{vertical-align: middle;}
+		.fileList .status{
+			line-height: 40px;
+			font-size: 15px;
+			 float: right;
+		}
+        .blockBorder{
+            width: 500px;
+            height: 300px;
+            overflow: auto;
+            border: 1px solid #999;
+            border-radius: 5px;
+            padding: 10px;
+        }
+	</style>
+	<div class="form-page">
+		<div class="title">会议内容</div>
+		<div class="form-row blockBorder">
+			<p name="" id="meetingContent" style="text-indent:30px;"></p>
+		</div>
+		<!-- <div class="form-row toolbar">
+			<button class="btn-upload" title="上传附件">
+				<img src="images/upload.png"  width="42" alt="">
+			</button>
+		</div> -->
+		<div class="form-row fileList">
+			<ul id="meetingAttachs">
+				<!-- <li>
+					<span class="info"><i><img src="images/ext-word.png" width="40" alt=""></i>请假条</span>
+					<span class="status">32k</span>
+				</li> -->
+			</ul>
+		</div>
+		<div class="form-row" style="margin-top:30px;">
+			<button class="button btn-submit" id="submit"></button>
+			<button class="button btn-reset"></button>
+		</div>
+	</div>
+	<script>
+		$(function() {
+            debugger;
+            getMeetingInfo();
+            function getMeetingInfo(){
+            var meetId = $('#meetinInfo').parent().parent().attr('meeting');
+			$.ajax({
+				url: APIGATEWAY + '/hdgl/meetingNotic/getById',
+				type: 'get',
+				//contentType: 'text/html;charset=UTF-8' 'application/x-www-form-urlencoded',
+				xhrFields: {
+					withCredentials: true
+				},
+				crossDomain: true,
+				data: {
+                    id:meetId
+                },
+				success: function(result) {
+                    if(result.code=="success"){
+                        debugger;
+                        $('#meetingContent').html(result.body.vo.meetingContnet);
+                        $('#meetingAttachs').empty();
+                        result.body.attachments.forEach(function(item) {   
+                            var fileUrl = APIGATEWAY + "/workflow/wfBusiAttach/downloadById?inline=true&attachIds=" + item.id                         
+                            var li = ` <li>
+                                <span class="info"><i><img src="images/ext-word.png" width="40" alt=""></i><a target="_blank" href="${fileUrl}">${item.fileName}</a></span>
+                                <span class="status">${item.fileSize}</span>
+                            </li>`
+                            $('#meetingAttachs').append(li)
+                        });
+                    }
+                    else{
+                        $("#errorDiv").html(result.message);
+                    }
+				}
+			});
+            }
+		})
+	</script>
+</div>

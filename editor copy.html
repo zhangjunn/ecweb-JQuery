@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap.css">
+    <link href="dist/summernote.css" rel="stylesheet">
+    <script src="js/js/jquery.min.js"></script>
+    <script src="js/js/bootstrap.min.js"></script>
+    <script src="dist/summernote.js"></script>
+    <script src="dist/lang/summernote-zh-CN.js"></script> 
+<style>
+	.m{ width: 800px; margin-left: auto; margin-right: auto; }
+	.input-90{
+		width: 500px;
+		margin-bottom: 10px;
+	}
+	::-webkit-input-placeholder{
+		text-align: right;
+	}
+	:-moz-placeholder{
+		text-align: right;
+
+	}
+	::-moz-placeholder{
+		text-align: right;
+
+	}
+	:-ms-input-placeholder{
+		text-align: right;
+
+	}
+	select{
+		width: 100px;
+		font-size:12px;
+		height: 30px;
+		line-height:30px;
+	}
+	.button{
+		width: 200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+	}
+	.button-tiezi,.button-quxiao{
+		background-color: #ff8b3d;
+		color:#fff;
+		outline: none;
+		width: 80px;
+		height: 30px;
+	}
+	.button-quxiao{
+		background-color: #C5C5C5;
+	}
+</style>
+
+<script>
+$(function(){
+ $('.summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        lang: 'zh-CN'
+    });
+});
+</script>
+</head>
+<body>
+<script src="/demos/googlegg.js"></script>
+<div class="m">		
+    <div class="new-title" style="margin-top: 20px;margin-bottom:10px;">发表新主题</div>
+    <input type="text" placeholder="还可以输入90个字符" class="input-90">
+    <select id="" name="">
+		<option value="0">选择板块</option>
+    	<option value ="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value ="4">4</option>
+    </select>
+	<div class="summernote"></div>
+	<div class="button">
+	<button class="button-tiezi">发表帖子</button>
+	<a href="javascript:history.go(-1)"><button class="button-quxiao">取消</button></a>
+	</div>
+</div>
+</body>
+</html>

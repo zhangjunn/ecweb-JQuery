@@ -1,0 +1,115 @@
+/*
+*   样式初始化
+*/
+img{ border: none}
+ul,li,ol { list-style: none;}
+em{ font-style: normal}
+body { font-size: 14px; font-family: "微软雅黑"; overflow-x: hidden;}
+a { text-decoration: none}
+a:hover { text-decoration: none}
+ul,ol,li,div,h1,h2,h3,h4,h5,h6,a,p,span,strong,div,section,footer,body { margin: 0; padding: 0;}
+input { outline:none;}
+
+input::-webkit-input-placeholder{
+    color:#fff;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#fff;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#fff;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+    color:#fff;
+}
+
+.clearFloat {
+    width:1200px; margin:0 auto; overflow: hidden;
+}
+
+#header{
+    .top{
+        .top-wrapper{
+            .clearFloat; overflow: inherit;
+            .logo{
+                float: left;
+            }
+            .r-linkbox{
+                float: right; margin-top: 25px; position: relative;
+                ul{
+                    li{
+                        float: left; margin-left: 24px;
+                        width:50px; height:50px;
+                    }
+                }
+                .wechat_code {
+                    position: absolute; left: -6px; top: 60px; z-index: 99; display: none;
+                }
+            }
+        }
+    }
+    .nav{
+        height: 50px; width:100%; background:#e70012;
+        .nav-wrapper{
+            .clearFloat;
+            .nav-list{
+                float: left;
+                ul{
+                    li{
+                        float: left; width: 120px; line-height:50px;
+                        font-size: 18px; text-align: center;
+                        a{
+                            display: block; color: #fff;
+                        }
+                        &.active{
+                            a{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+            .search{
+                float: right; position: relative;
+                width:244px; height:30px; border: 1px solid white; border-radius: 30px;
+                background: #e70012; overflow: hidden; margin-top: 9px;
+                input{
+                    border: none; background: none;  height: 30px; line-height: 30px; font-size: 14px;
+                    width: 210; padding-right: 20px; padding-left: 14px; color: #fff;
+                }
+                a{
+                    position: absolute; right: 12px; top: 5px;
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    background: #999999; color: #fff;
+    .wrapper{
+        height: 192px; border-bottom: 1px dashed #fff;
+        .blogroll{
+            width:1200px; margin: 0 auto; padding-top: 32px;
+            h3{
+                height:40px; line-height:40px; color: #fff; font-size: 18px; font-weight: normal;
+            }
+            ul{
+                margin-left: 42px; margin-top: 16px;
+                li{
+                    float: left; margin-right: 98px;
+                    a{
+                        display: block; height:42px; line-height: 42px; border-bottom: 1px solid #fff;
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        padding: 25px 0; text-align: center; 
+        p{
+            height: 26px; line-height:26px; font-size: 14px; color: #EEEEEE;
+        }
+    }
+}

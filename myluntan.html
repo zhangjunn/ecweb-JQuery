@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+	<link type="text/css" rel="stylesheet" href="css/bt/index.css"/>
+	<link rel="stylesheet" href="css/common/jquery.sPage.red.css">
+    <link rel="stylesheet" href="css/bt/gr.css">
+    <link rel="stylesheet" href="css/bt/zhongxin.css">
+    <link rel="stylesheet" href="css/bt/gr.css">
+	<link rel="stylesheet" href="css/bt/luntan.css">
+	<link rel="stylesheet" href="css/bt/luntanindex.css">
+	<link rel="stylesheet" href="css/bt/myluntan.css">
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+	<script src="js/common/jquery.sPage.js"></script>
+    <script src="js/common/jquery.cookie.js"></script>
+    <script src="js/common/common.js"></script>
+    <script src="js/morejs/myluntan.js"></script>
+</head>
+<body>
+        <div id="header">
+                <div class="top">
+                    <div class="top-wrapper">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+                        </div>
+                        <div class="r-linkbox">
+                            <ul>
+                                <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+                                <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+                                <li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+                            </ul>
+                            <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <div class="nav-wrapper">
+                        <div class="nav-list">
+                            <ul>
+                                <li><a href="index.html">首页</a></li>
+                                <li><a href="volunteer.html">志愿时</a></li>
+                                <li><a href="youth.html">青创汇</a></li>
+                                <li><a href="activity.html">U友缘</a></li>
+                                <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+                                <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+                                <li  class="active"><a href="forum.html">论坛</a></li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <input type="text" placeholder="输入需要查找的信息">
+                            <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	
+	<div class="w-1200" style="display: flex;justify-content: space-between;">
+            <div class="w-300">
+                <div class="qmcy-right-box" style="margin-left: 0;" id="focusContainer">
+                        <script type="text/x-jsrender" id="userinfo">
+                    <div style="margin-top: 30px;">
+                            <img src="{{:apigateway}}{{:imageUrl}}" alt="" class="userimg">
+                    </div>
+                    <p style="color: #333;font-weight:700;">{{:nickname}}</p>
+                    <div style="display: flex;margin: 0 auto;width:150px;justify-content: space-between;margin-top:30px;">
+                        <div class="fbzt">
+                            <p style="color:#999;">发布主题</p>
+                            <p style="color:#999;">{{:postNum}}</p>
+                        </div>
+                        <div class="hfzt">
+                            <p style="color:#999;">回复主题</p>
+                            <p style="color:#999;">{{:answerNum}}</p>
+                        </div>
+                    </div>
+                        <div class="gz-zy">
+                            <button class="qx-gzs">取消关注</button>
+                        </div>
+                    </script>
+                 </div>
+            </div>
+               <div class="w-900">
+             <div class="index-top-title">
+                 <ul class="three-click">
+                     <li class="btn-click active">主题</li>
+                     <li class="btn-click">回复</li>
+                     <li class="btn-click">关注</li>
+                 </ul>
+                 <!-- <button class="fbzt">发表新主题</button> -->
+             </div>
+             <div class="luntan-bigbox">
+             <div class="jhzt-box jhzt-pro">
+            <script type="text/x-jsrender" id="zyzhdList">
+                {{for list}}
+             <div class="remenzhuti">
+                 <div class="remenzhuti-left">
+                 <div class="remen-pic">
+                        <img src="{{:#parent.parent.data.apigateway}}/gqt/grzx/user/download?id={{:ownerId}}&dataField=logoData&nameField=logoName" alt="" class="userimg">
+                    </div>
+                 <div class="remen-wenzi">
+                     <p class="remen-zys"><span style="color:#fa311a;font-weight: 700;">[{{:moduleName}}]</span>&nbsp;&nbsp;{{:title}}</p>
+                     <div class="remen-ly-yll">
+                     <p class="remen-xx">{{:author}}</p>
+                     <p class="remen-c5">{{:publishTime}}</p>
+                     </div>
+                 </div>
+                 </div>
+                 <div class="remenzhuti-right">
+                     <p class="remen-lb">{{:moduleName}}</p>
+                     <div class="remen-ly-yll">
+                     <p><img src="images/lt/index/yll.png" alt="" class="pic-middle">{{:visitNum}}</p>
+                     <p><img src="images/lt/index/ly.png" alt="" class="pic-middle">{{:answerNum}}</p> 
+                     </div>
+                 </div>
+             </div>
+             {{/for}}
+            </script>
+                </div>
+                <div class="jhzt-box tmlHuifu" style="display:none;">
+                        <script type="text/x-jsrender" id="replayList">
+                        {{for list}}
+                        <div class="remenzhuti">
+                            <div class="remenzhuti-left">
+                            <div class="remen-pic">
+                                    <img src="{{:#parent.parent.data.apigateway}}/gqt/grzx/user/download?id={{:ownerId}}&dataField=logoData&nameField=logoName" alt="" class="userimg">
+                            </div>
+                            <div class="remen-wenzi">
+                                <p class="remen-zys"><span style="color:#fa311a;font-weight: 700;">[{{:moduleName}}]</span>&nbsp;&nbsp;{{:postTitle}}</p>
+                                <div class="remen-ly-yll">
+                                <p class="remen-xx">{{:author}}</p>
+                                <p class="remen-c5">{{:publishTime}}</p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="remenzhuti-right">
+                                <p class="remen-lb">{{:moduleName}}</p>
+                                <div class="remen-ly-yll">
+                                <p><img src="images/lt/index/yll.png" alt="" class="pic-middle">{{:visitNum}}</p>
+                                <p><img src="images/lt/index/ly.png" alt="" class="pic-middle">{{:answerNum}}</p> 
+                                </div>
+                            </div>
+                        </div>
+                        {{/for}}
+                    </script>
+                           </div>
+                           <div class="jhzt-box" style="display:none;">
+                               <div class="myluntan-gz">关注模块</div>
+                               <ul class="myluntan-ul gzModle">
+                                    <script type="text/x-jsrender" id="gzModle">
+                                    {{for list}}
+                                   <li class="myluntan-li">
+                                        <img src="{{:#parent.parent.data.apigateway}}{{:moduleUrl}}" alt="" class="userimg">
+                                       <p>{{:moduleName}}</p>
+                                   </li>
+                                   {{/for}}
+                                   </script>
+                               </ul>
+                               <div class="myluntan-user">关注用户</div>
+                               <ul class="myluntan-user-ul gzuser-pro">
+                                <script type="text/x-jsrender" id="gzuser">
+                                    {{for list}}
+                                   <li class="myluntan-user-li">
+                                        <img src="{{:#parent.parent.data.apigateway}}{{:bhyUrl}}" alt="" class="userimg">
+                                       <p class="myluntan-user-p">{{:bhyXm}}</p>
+                                   </li>
+                                   {{/for}}
+                                </script>
+                               </ul>
+                           </div>
+
+            </div>
+        </div>
+           
+        </div>
+	
+	
+	 <div id="footer">
+	    <div class="copyright">
+	        <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+	        <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+	    </div>
+	</div>

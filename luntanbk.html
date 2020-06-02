@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/bt/index.css"/>
+    <link rel="stylesheet" href="css/common/jquery.sPage.red.css">
+    <link rel="stylesheet" href="css/bt/zhongxin.css">
+    <link rel="stylesheet" href="css/bt/gr.css">
+	<link rel="stylesheet" href="css/bt/luntan.css">
+	<link rel="stylesheet" href="css/bt/luntanindex.css">
+    <link rel="stylesheet" href="css/bt/myluntan.css">
+    <script src="js/common/common.js"></script>
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+    <script src="js/common/jquery.sPage.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <!-- <script src="js/morejs/luntan.js"></script> -->
+    <script src="js/morejs/luntanbk.js"></script>
+    <script src="js/common/jquery.cookie.js"></script>
+	<style>
+        .imgbox{
+            height: 350px;
+            width: 100%;
+            display: block;
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+        <div id="header">
+                <div class="top">
+                    <div class="top-wrapper">
+                        <div class="logo">
+                            <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+                        </div>
+                        <div class="r-linkbox">
+                            <ul>
+                                <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+                                <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+                                <li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+                            </ul>
+                            <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+                <div class="nav">
+                    <div class="nav-wrapper">
+                        <div class="nav-list">
+                            <ul>
+                                <li class="active"><a href="index.html">首页</a></li>
+                                <li><a href="volunteer.html">志愿时</a></li>
+                                <li><a href="youth.html">青创汇</a></li>
+                                <li><a href="activity.html">U友缘</a></li>
+                                <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+                                <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+                                <li><a href="forum.html">论坛</a></li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <input type="text" placeholder="输入需要查找的信息">
+                            <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	<div class="banner banner-zhiyuanshi">
+                    <!-- Wrapper for slides -->
+                        <div class="item active">
+                            <a href="#" class="imgbox" style="background-image:url(images/lt/zhuye/banner.png) "></a>
+                        </div>
+        </div>
+	<div class="zhiyuanshi">
+            <div class="zhiyuanshi-pic"  style="padding-top: 60px;"><img src="images/lt/zhuye/zys.png" alt=""></div>
+            <div class="zhiyuanshi-wz">
+                <p class="zhiyuanshi-h3">志愿时</p>
+                <p class="zhiyuanhi-h5">志愿者之家志愿者之家志愿者之家</p>
+            </div>
+            <div class="zhiyuanshi-gz" style="margin-top:100px;">
+                <button class="gz-zyz">取消关注</button>
+            </div>
+        </div>
+           <!--****************************** 主题精华部分********************* -->
+           <div class="w-1200" style="display: flex;justify-title: space-between;">
+                <div class="w-900">
+              <div class="index-top-title">
+                  <ul class="three-click">
+                      <li class="btn-click active">热门主题</li>
+                      <li class="btn-click">精华主题</li>
+                      <li class="btn-click">最新主题</li>
+                  </ul>
+                  <a href="editor.html" target="_blank" style="display: inline-block;"><button class="fbzts">发表新主题</button></a>
+              </div>
+              <!-- 一个详情列表 -->
+              <div class="luntan-bigbox">
+                  <!-- ***************热门主题*************************** -->
+              <div class="jhzt-box forum-remen">
+                <script type="text/x-jsrender" id="hotdoor">
+                 {{for list}}
+              <a class="remenzhuti" href="luntan.html?id={{:id}}" target="_blank">
+                  <div class="remenzhuti-left">
+                  <div class="remen-pic">
+                      <img src="{{:#parent.parent.data.apigateway}}{{:userLogoUrl}}" alt="" class="userimg">
+                  </div>
+                  <div class="remen-wenzi">
+                      <p class="remen-zys"><span style="color:#fa311a;font-weight: 700;">[{{:moduleName}}]</span>&nbsp;&nbsp;{{:title}}</p>
+                      <div class="remen-ly-yll">
+                      <p class="remen-xx">{{:author}}</p>
+                      <p class="remen-c5">{{:publishTime}}</p>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="remenzhuti-right">
+                      <p class="remen-lb">{{:moduleName}}</p>
+                      <div class="remen-ly-ylls">
+                      <p><img src="images/lt/index/yll.png" alt="" class="pic-middle">{{:visitNum}}</p>
+                      <p><img src="images/lt/index/ly.png" alt="" class="pic-middle">{{:answerNum}}</p> 
+                      </div>
+                  </div>
+              </a>
+              {{/for}}
+             </script>
+             <!-- <div id="myPage" class="page"></div> -->
+                 </div>
+                 <!-- 精华主题 -->
+                 <div class="jhzt-box forum-rejinhua" style="display:none;">
+                     <script type="text/x-jsrender" id="minihua">
+                         {{for list}}
+                         <a class="remenzhuti" href="luntan.html?id={{:id}}" target="_blank">
+                             <div class="remenzhuti-left">
+                             <div class="remen-pic">
+                               <img src="{{:#parent.parent.data.apigateway}}{{:userLogoUrl}}" alt="" class="userimg">
+                             </div>
+                             <div class="remen-wenzi">
+                                 <p class="remen-zys"><span style="color:#fa311a;font-weight: 700;">[{{:moduleName}}]</span>&nbsp;&nbsp;{{:title}}</p>
+                                 <div class="remen-ly-yll">
+                                 <p class="remen-xx">{{:author}}</p>
+                                 <p class="remen-c5">{{:publishTime}}</p>
+                                 </div>
+                             </div>
+                             </div>
+                             <div class="remenzhuti-right">
+                                 <p class="remen-lb">{{:moduleName}}</p>
+                                 <div class="remen-ly-ylls">
+                                 <p><img src="images/lt/index/yll.png" alt="" class="pic-middle">{{:visitNum}}</p>
+                                 <p><img src="images/lt/index/ly.png" alt="" class="pic-middle">{{:answerNum}}</p> 
+                                 </div>
+                             </div>
+                         </a>
+                         {{/for}}
+                     </script>
+                     <!-- <div id="myPages" class="page"></div> -->
+                            </div>
+                            <!-- *******************最新************************* -->
+                            <div class="jhzt-box forum-zuixin" style="display:none;">
+                                 <script type="text/x-jsrender" id="mostnew">
+                                 {{for list}}
+                                 <a class="remenzhuti" href="luntan.html?id={{:id}}" target="_blank">
+                                     <div class="remenzhuti-left">
+                                     <div class="remen-pic">
+                                       <img src="{{:#parent.parent.data.apigateway}}{{:userLogoUrl}}" alt="" class="userimg">
+                                     </div>
+                                     <div class="remen-wenzi">
+                                         <p class="remen-zys"><span style="color:#fa311a;font-weight: 700;">[{{:moduleName}}]</span>&nbsp;&nbsp;{{:title}}</p>
+                                         <div class="remen-ly-yll">
+                                         <p class="remen-xx">{{:author}}</p>
+                                         <p class="remen-c5">{{:publishTime}}</p>
+                                         </div>
+                                     </div>
+                                     </div>
+                                     <div class="remenzhuti-right">
+                                         <p class="remen-lb">{{:moduleName}}</p>
+                                         <div class="remen-ly-ylls">
+                                         <p><img src="images/lt/index/yll.png" alt="" class="pic-middle">{{:visitNum}}</p>
+                                         <p><img src="images/lt/index/ly.png" alt="" class="pic-middle">{{:answerNum}}</p> 
+                                         </div>
+                                     </div>
+                                 </a>
+                                 {{/for}}
+                                 </script>
+                                    </div>
+             </div>
+             <div id="myPage" class="page"></div>
+            </div>
+           <div class="qmcy-right">
+                <div class="rtlt" style="height: auto;">
+                    <div class="rtlt-title">版主</div>
+                    <ul style="width: 90%;margin:0 auto;text-align: center; display: flex;">
+                        <li class="bz-rt">
+                            <img src="images/lt/index/tx-icon.png" alt="">
+                            <p>小星星</p>
+                        </li>
+                        <li bz-rt>
+                                <img src="images/lt/index/tx-icon.png" alt="">
+                                <p>成菲菲</p>
+                            </li>
+                    </ul>
+                </div>
+                <div class="tjbk">
+                        <div class="rtlt-title">全部模块</div>
+                        <ul style="width: 90%;margin:0 auto;" class="allmodel">
+                                <script type="text/x-jsrender" id="allpages">
+                                   {{for}}
+                                   <li class="rtlt-li-three">
+                                       <div class="div-three"><img src="images/lt/index/yy.png" alt=""></div>
+                                       <p class="remen-titles">{{:moduleName}}</p>
+                                   </li>
+                                  {{/for}}
+                                </script>
+                               </ul>
+                               <div class="btn-xl">▼</div>
+                    </div>
+               </div>
+           <!-- *****************************翻页部分************************* -->
+           <div style="width: 100%;text-align: center;">
+                <div id='page'></div>
+           </div>
+           <!-- ************************************************************** -->
+        </div>
+	<div id="footer">
+	        <div class="copyright">
+	            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+	            <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+	        </div>
+	    </div>
+	</body>
+	</html>

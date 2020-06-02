@@ -1,0 +1,47 @@
+.input-ys{
+    width: 900px;
+    height: 30px;
+    border-radius: 3px;
+    border:1px solid #ccc;
+    margin-top: 30px;
+}
+.seach-range{
+    color: #ccc;
+    line-height: 30px;
+}
+.show-list{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+    margin-top: 50px;
+}
+.visit-num{
+    text-align: right;
+}
+.search-input{
+    width: 900px;
+    position: relative;
+}
+.search-logo{
+    position: absolute;
+    right: 10px;
+    top:32px;
+}
+ .input-ys::-webkit-input-placeholder{
+  color: #666;
+  padding-left: 20px;
+}    /* 使用webkit内核的浏览器 */
+ input:-moz-placeholder{
+    color: #666;
+    padding-left: 20px;
+}                  /* Firefox版本4-18 */
+ input::-moz-placeholder{
+    color: #666;
+    padding-left: 20px;
+}                  /* Firefox版本19+ */
+ input:-ms-input-placeholder{
+    color: #666;
+    padding-left: 20px;
+}   

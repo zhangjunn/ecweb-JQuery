@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/common/jquery.sPage.red.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/common.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+    <script src="js/common/jquery.sPage.js"></script>
+    <script src="js/activity.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="top">
+            <div class="top-wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+                </div>
+                <div class="r-linkbox">
+                    <ul>
+                        <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+                        <li><a target="_blank" href="https://s.weibo.com/weibo/%25E5%25B9%25BF%25E5%25B7%259E%25E5%2585%25B1%25E9%259D%2592%25E5%259B%25A2?topnav=1&wvr=6&b=1"><img src="images/common/sina.jpg" alt=""></a></li>
+                        <li><a href="javascript:;"><img src="images/common/user.jpg" alt=""></a></li>
+                    </ul>
+                    <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="volunteer.html">志愿时</a></li>
+                        <li><a href="youth.html">青创汇</a></li>
+                        <li class="active"><a href="activity.html">U友缘</a></li>
+                        <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+                        <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+                        <li><a href="forum.html">论坛</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="输入需要查找的信息">
+                    <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="volunteer-main">
+        <div class="wrapper">
+            <div class="title">
+                <a href="javascript:;" style="color:#E70012">U友缘活动</a>
+            </div>
+            <div class="search-box">
+                <div class="activity-pro">
+                    <!-- <li>
+                        <a href="#">
+                            <div>
+                                <img src="images/activity/column1-main1.png" alt="">
+                            </div>
+                            <h3><span>炼爱学堂</span>完美主义者的升级</h3>
+                            <p>报名剩余时间：<strong>6</strong>天</p>
+                            <p>当前报名人数：<strong>5</strong>人</p>
+                        </a>
+                    </li> -->
+                </div>
+                <div style="clear:both"></div>
+                <div id="myPage" class="page"></div>
+            </div>
+        </div>
+    </div> 
+    <div id="footer">
+        <div class="copyright">
+            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+            <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+        </div>
+    </div>
+    <script type="text/x-jsrender" id="uUyList">
+        <ul>
+            {{for list}}
+            {{if (#getIndex()+1)%2==0}}
+            <li style="margin-right:0px;">
+            {{else}}
+            <li>
+            {{/if}}
+                <a href="{{:lj}}">
+                    <div>
+                        {{if #data.tp}}
+                        <img src="{{:tp}}" alt="">
+                        {{else}}
+                        <img src="images/common/noPic.jpg" alt="">
+                        {{/if}}
+                    </div>
+                    <h3>{{:bt}}</h3>
+                    <p>报名剩余时间：<strong>{{:syts}}</strong>天</p>
+                    <p>当前报名人数：<strong>{{:dqbmrs}}</strong>人</p>
+                </a>
+            </li>
+            {{/for}}
+        </ul>
+    </script>
+</body>
+</html>

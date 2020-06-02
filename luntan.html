@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+	<link type="text/css" rel="stylesheet" href="css/bt/index.css"/>
+	<link rel="stylesheet" href="css/common/jquery.sPage.red.css">
+    <link rel="stylesheet" href="css/bt/gr.css">
+ <!--   <link rel="stylesheet" href="css/bt/zhongxin.css"> -->
+    <link rel="stylesheet" href="css/bt/gr.css">
+	<link rel="stylesheet" href="css/bt/luntan.css">
+	<link rel="stylesheet" href="css/bt/luntanindex.css">
+	<link rel="stylesheet" href="css/bt/myluntan.css">
+	<script src="js/common/jquery-1.8.3.js"></script>
+	<script src="js/common/common.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+	<script src="js/common/jquery.sPage.js"></script>
+	<script src="js/common/jquery.cookie.js"></script>
+	<script src="js/morejs/luntan.js"></script>
+</head>
+<body>
+		<div id="header">
+				<div class="top">
+					<div class="top-wrapper">
+						<div class="logo">
+							<a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+						</div>
+						<div class="r-linkbox">
+							<ul>
+								<li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+								<li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+								<li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+							</ul>
+							<img class="wechat_code" src="images/common/wechat_code.png" alt="">
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+				<div class="nav">
+					<div class="nav-wrapper">
+						<div class="nav-list">
+							<ul>
+								<li><a href="index.html">首页</a></li>
+								<li><a href="volunteer.html">志愿时</a></li>
+								<li><a href="youth.html">青创汇</a></li>
+								<li><a href="activity.html">U友缘</a></li>
+								<li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+								<li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+								<li class="active"><a href="forum.html">论坛</a></li>
+							</ul>
+						</div>
+						<div class="search">
+							<input type="text" placeholder="输入需要查找的信息">
+							<a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div class="w-1200" style="display: flex;">
+			<div class=" qmcy-left">
+			<div class="detaiinfos" id="collect">
+			<script type="text/x-jsrender" id="detailinfo">
+			{{for}}
+            <div class="qmcy">
+               <p><span style="color:#e70012;"> &nbsp;&nbsp;</span>{{:title}}</p>
+               <p style="color:#999;">模块：{{:moduleName}}</p>
+            </div>
+            <div class="logos-title">
+                <div class="logos-title-one">
+                    <img src="images/lt/index/jing.png" alt="" style="width: 18px;height:18px;">&nbsp;&nbsp;
+                    <img src="images/lt/index/top-row.png" alt="" style="width: 18px;height:18px;">
+				</div>
+				<div class="xing-time">
+					<p style="width: 150px; text-align: center;color:#666;">{{:author}}</p>
+					<p style="color:#999;width:200px;">{{:publishTime}}</p>
+				</div>
+				<div class="sc-jb" id="collect-jb">
+					<div style="color: #999;cursor: pointer;" class="coloect">收藏</div>
+					&nbsp;&nbsp;&nbsp;
+					<div style="color: #999;cursor: pointer; class="report">举报</div>
+				</div>
+				<div style="display: flex; justify-content: flex-end;width: 306px;">
+					<p style="color:#ccc;"><img src="images/lt/index/yll.png" alt="" class="pic-middle">&nbsp;{{:visitNum}}</p>&nbsp;&nbsp;&nbsp;
+					<p style="color:#ccc;"><img src="images/lt/index/ly.png" alt="" class="pic-middle">&nbsp;{{:answerNum}}</p>
+				</div>
+			</div>
+			<div class="wenzhang">
+				  {{:content}}
+			</div>
+			<!-- <div style="width: 900px;">
+				<img src="images/lt/index/zt.png" alt="" style="display: block;width:900px;height:auto;">
+			</div> -->
+			<!-- <p class="wz-dl">
+				在这个全民创业的时代，带着个的房间大楼附近的克拉夫据了解大量房价肯定拉法基扩大了尽快发
+				的卡垃圾分类大厦及大量连脚裤连脚裤连脚裤连脚裤连脚裤了解了解连脚裤了解了解连脚裤了解两节课
+			</p> -->
+		{{/for}}
+		</script>
+		</div>
+			<div class="pinglun">
+				<div class="pinglun-pic clearfix"><img src="images/lt/index/tx-icon.png" alt="" style="width: 50px;height:50px;vertical-align: top;"></div>
+				<input type="text" class="pinglun-sr" placeholder="说说你的看法" name="sensitiveWords" id="speaks">
+				<div style="width: 100px;text-align:center;"><button class="pinglun-fb" id="postBtn">发表</button></div>
+			</div>
+			<div style="text-align: right;padding-right: 100px;color:#666;cursor: pointer;">高级模式</div>
+			<div class="red-tx">
+				您发表的言论包含敏感词汇，请删除后再进行相关操作
+			</div>
+			<!-- ***********************循环部分************************************ -->
+			<div class="pepoel-pl replayList" id="jb-sc">
+					<script type="text/x-jsrender" id="lists">
+					{{for list}}
+			   <div style="display:flex;border-bottom:1px solid #ccc;padding:20px 0; position: relative;">
+				   <!-- <div class="report">
+                   
+				   </div> -->
+				<div class="pepoel-left">
+						<img src="{{:#parent.parent.data.apigateway}}{{:userImageUrl}}" alt="" class="userimg">
+				</div>
+				<div class="pepoel-middle">
+					<div class="pepoel-middle-top">
+						{{:author}}
+						<span style="color:#aeaeae;font-size:12px;padding-left: 10px;">{{:contentTime}}</span>
+					</div>
+					<div class="pepoel-middle-bottom">{{:content}}</div>
+				</div>
+				<div class="pepoel-right">
+					<div class="pepoel-sf"></div>
+					<div class="logo-title">
+					  <p style="color:#999;font-size:14px;width:50px;text-align: center;cursor:pointer;">举报</p>
+					  <a href="replay.html?id={{:id}}">
+					  <p style="color:#999;font-size:14px; width:50px;text-align: center;cursor:pointer;">回复</p>
+					  </a>
+					</div>
+				</div>
+			</div>
+				{{/for}}
+			</script>
+			</div>
+			<!-- ******************************循环部分******************************* -->
+			<div id="myPage" class="page"></div>
+			
+		</div>
+		<div class="qmcy-right">
+         <div class="qmcy-right-box" id="focusContainer">
+			<script type="text/x-jsrender" id="userinfo">
+			<div style="margin-top: 30px;">
+					<img src="{{:apigateway}}{{:imageUrl}}" alt="" class="userimg">
+			</div>
+			
+			<p style="color: #333;font-weight:700;">{{:nickname}}</p>
+			<div style="display: flex;margin: 0 auto;width:150px;justify-content: space-between;margin-top:30px;">
+				<div class="fbzt">
+					<p style="color:#999;">发布主题</p>
+					<p style="color:#999;">{{:postNum}}</p>
+				</div>
+				<div class="hfzt">
+					<p style="color:#999;">回复主题</p>
+					<p style="color:#999;">{{:answerNum}}</p>
+				</div>
+			</div>
+				<div class="gz-zy">
+					<div style="display: inline-block;">
+					<button class="gz btn-gz ">关注</button>
+				    </div>
+					<a href="myluntan.html?id={{:id}}" target="_blank"><button class="zy">Ta的主页</button></a>
+				</div>
+			</script>
+		 </div>
+		 <div class="rtlt">
+			 <div class="rtlt-title">论坛热帖</div>
+			 <ul style="width: 90%;margin:0 auto;" class="hotlist">
+                    <script type="text/x-jsrender" id="hotLt">
+                        {{for}}
+                        {{if #getIndex() <= 2}}
+                        <li class="rtlt-h active-h">
+                        {{else}}
+                        <li class="rtlt-h rtlts-color">
+                        {{/if}}
+                           {{:#getIndex()+1}}&nbsp;&nbsp;&nbsp;{{:title}}</li>
+                        
+                        {{/for}}
+                    </script>
+                    </ul>
+		 </div>
+		 <div class="tjbk">
+			 <div class="rtlt-title">推荐模块</div>
+			 <ul style="width: 90%;margin:0 auto;" id="modele">
+					<script type="text/x-jsrender" id="hotmodel">
+                        {{for}}
+                       <li class="rtlt-li">
+						   <a href="" class="rtlt-li-a">
+                           <div><img src="images/lt/index/yy.png" alt=""></div>
+                           <div class="tjbk-yy">
+                               <p style="font-weight: 700;color:#333;" class="md-name">{{:name}}</p>
+                               <p style="font-size:12px;color: #666;"  class="md-dcri">{{:descript}}</p>
+                           </div>
+						   </a>
+                       </li>
+                       {{/for}}
+                    </script>
+			</ul>
+		 </div>
+		</div>
+        </div>
+	<div id="footer">
+	        <div class="copyright">
+	            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+	            <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+	        </div>
+	    </div>
+	</body>
+	</html>
+

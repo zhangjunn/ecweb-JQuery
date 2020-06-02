@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>广州网上共青团</title>
+		<link rel="stylesheet" href="css/common/idangerous.swiper.css">
+		<link rel="stylesheet" href="css/common/ace.css">
+		<link rel="stylesheet" href="css/common/bootstrap.min.css">
+		<link rel="stylesheet" href="css/common/common.css">
+		<link rel="stylesheet" href="css/login.css">
+		<script src="js/common/jquery-1.8.3.js"></script>
+		<script src="js/common/jsrender.min.js"></script>
+		<script src="js/common/idangerous.swiper.min.js"></script>
+		<script src="js/common/common.js"></script>
+		<script src="js/common/jquery.cookie.js"></script>
+	</head>
+	<body>
+
+		<div class="login-top">
+			<div class="loginTop-wrap">
+				<div class="center">
+					<img src="images/common/logo.jpg" />
+				</div>
+
+			</div>
+
+		</div>
+		<div id="main-container" class="login-layout light-login" style="height: 540px;background:url('images/common/login_bg2.jpg') center top no-repeat;margin-top: 20px;"
+		 ng-controller="validateCtrl">
+			<div class="main-content">
+				<div class="row">
+					<div class="col-sm-10 col-sm-offset-1">
+						<div style="width: 1000px; margin: 0 auto">
+							<div class="login-container">
+
+
+								<div class="space-6"></div>
+
+								<div class="position-relative">
+									<div id="login-box" class="login-box visible widget-box no-border">
+										<div class="widget-body">
+											<div class="widget-main">
+												<h4 class="header lighter bigger" style="color: black;font-weight: bold;">
+													正在登录到 广州网上共青团
+												</h4>
+												<div class="space-6"></div>
+
+												<form ng-show="loginType!='qrCode'" id="loginForm" name="loginForm" method="post" novalidate autocomplete="off">
+													<fieldset>
+														<label class="block clearfix">
+															<span class="block input-icon input-icon-right form-group">
+																<input name="username" type="text" class="form-control" placeholder="请输入帐号"   />
+																<!-- <input ng-if="recordPassword" type="text" name="username"> -->
+																<i class="ace-icon fa fa-user"></i>
+															</span>
+														</label>
+
+														<label class="block clearfix">
+															<span class="block input-icon input-icon-right form-group">
+																<input name="password" type="password" class="form-control" placeholder="请输入密码" />
+																<i class="ace-icon fa fa-lock"></i>
+															</span>
+														</label>
+
+														<label class="block clearfix" style="margin-bottom:0px;">
+															<span class="block input-icon input-icon-right form-group" style="overflow:hidden;margin-bottom:5px">
+																<input id="kaptcha" name="kaptcha" type="text" class="form-control pull-left" style="width: 185px;float:left;margin-right: 5px;"
+																 placeholder="请输入验证码"  />
+
+																<img id="kaptchaImage" src="" width="110" height="39" style="border:1px solid #d5d5d5;" class="kaptcha pull-right"
+																 alt="验证码" />
+															</span>
+
+															<div class="" style="overflow:hidden; height:30px;">
+																<label class="inline" style="width:50%;float:left; line-height:30px;">
+																	<input name="rememberme" ng-model="recordPassword" type="checkbox" class="ace" />
+																	<span class="lbl">记住密码</span>
+																</label>
+																<label class="inline" style="width:50%; float:left; text-align:right; line-height:30px;">
+																	<a onclick="changekaptcha();" style="display: block;height:32px;line-height: 32px;right:3px;">换一张</a>
+																</label>
+															</div>
+														</label>
+														<div id="loginTip" style="color:#d16e6c"></div>
+														<div class="clearfix" style="margin-top:12px;">
+
+
+															<button id="btnLogin" type="button" enter-tab style="width:100%" class="pull-right btn btn-sm btn-primary"
+															 onclick="btnLoginClick();">
+																<span class="bigger-130">登录</span>
+															</button>
+															<a href="#" ng-click="getUserPanel($event)" data-target="#forgot-box" class="forgot-password-link">
+																忘记密码
+															</a>
+														</div>
+
+														<div class="space-4"></div>
+													</fieldset>
+												</form>
+ 
+
+											</div><!-- /.widget-main -->
+										</div><!-- /.widget-body -->
+									</div><!-- /.login-box -->
+
+								 
+
+								</div><!-- /.position-relative -->
+
+							</div>
+						</div>
+						<!-- <div class="center">
+							<h4 class="blue" id="id-company-text">&copy; 广东易臣信息技术有限公司</h4>
+						</div> -->
+
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.main-content -->
+			<!-- <canvas id="dot" style="background:linear-gradient(to bottom, #2e77bb, #34cfbd);">
+				<p>your browser not support canvas</p>
+			</canvas> -->
+		</div><!-- /.main-container -->
+		<div class="login-foot">
+			<h4 class="grey" id="id-company-text">&copy; 共青团广州市委员会版权所有</h4>
+			<h5 class="grey">地址:广州市人民北路875号4-5楼 邮编:510170 E-mail:1234556@163.com</h5>
+		</div>
+		<script>
+
+		 $(function() {
+		     	changekaptcha();		
+		});
+		
+		function changekaptcha(){
+			  var kaptchaImageUrl=APIGATEWAY +"/login/getKaptchaImage?r="+Math.random();
+			$("#kaptchaImage").attr("src",kaptchaImageUrl);
+		}
+		
+		function btnLoginClick(){
+			var username = $("input[name='username']").val();
+			if(username==''){
+				$("#loginTip").html("请输入帐号！");
+				return;
+			}
+			var password = $("input[name='password']").val();
+			if(password==''){
+				$("#loginTip").html("请输入密码！");
+				return;
+			}
+			
+			var kaptcha = $("input[name='kaptcha']").val();
+			if(kaptcha==''){
+				$("#loginTip").html("请输入验证码！");
+				return;
+			}			
+			var params={
+				username:username,
+				password:password,
+				kaptcha:kaptcha
+			};
+		 //   $.cookie("KAPTCHA_SESSION_KEY",response.user.id);
+			$.ajax({
+				url:APIGATEWAY+'/formLogin',
+				dataType:'json',
+				type:'POST',
+				xhrFields: {
+　　　　　　			withCredentials: true
+　　　　			},
+				data:params,
+				success:function(result){
+					if(result.code=='success'){						
+						// window.open("index.html");
+						document.cookie = 'ECWEB-JWTSSO-TOKEN=' + result['ECWEB-JWTSSO-TOKEN'] + ';path=/';
+						location.href = 'index.html';
+					}else{
+						$("#loginTip").html(result.msg);
+						changekaptcha();
+					}
+				},
+				error:function(e){
+					 console.log(e.status);
+					console.log(e.responseText);
+				}
+			});
+			
+		}
+		</script>
+
+	</body>

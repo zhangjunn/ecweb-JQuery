@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+    <script src="js/common/idangerous.swiper.min.js"></script>
+    <script src="js/common/common.js"></script>
+    <script src="js/index.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/common/jquery.cookie.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="top">
+            <div class="top-wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+                </div>
+                <div class="r-linkbox">
+                    <ul>
+                        <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+                        <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+                        <li><a href="personal.html"><img src="images/common/user.jpg" alt=""></a></li>
+                    </ul>
+                    <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <ul>
+                        <li class="active"><a href="index.html">首页</a></li>
+                        <li><a href="volunteer.html">志愿时</a></li>
+                        <li><a href="youth.html">青创汇</a></li>
+                        <li><a href="activity.html">U友缘</a></li>
+                        <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+                        <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+                        <li><a href="forum.html">论坛</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="输入需要查找的信息">
+                    <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-banner">
+        <!-- <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide1"></div>
+                <div class="swiper-slide swiper-slide2"></div>
+                <div class="swiper-slide swiper-slide3"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div> -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide blue-slide swiper-slide1"></div>
+                <div class="swiper-slide red-slide swiper-slide2"></div>
+                <div class="swiper-slide orange-slide swiper-slide3"></div>
+            </div>
+        
+        </div>
+        <div class="pagination"></div>
+        <div class="news">
+            <div class="news-wrapper">
+                <div class="title">
+                    <a href="javascript:;" class="active">最新资讯</a>
+                    <a href="javascript:;">公众号热文</a>
+                </div>
+                <div class="news-list" style="display: block;">
+                    <script type="text/x-jsrender" id="news-tab1">
+                        <ul>
+                            {{for}}
+                            <li><a href="{{:#data.lj}}">• {{:#data.ly}}</a></li>
+                            {{/for}}
+                        </ul>
+                    </script>
+                </div>
+                <div class="news-list">
+                    <script type="text/x-jsrender" id="news-tab2">
+                        <ul>
+                            {{for}}
+                            <li><a target="_blank" href="{{:#data.lj}}">• {{:#data.ly}}</a></li>
+                            {{/for}}
+                        </ul>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="home-main">
+        <div class="main-wrapper">
+            <div class="column1">
+                <div class="title">
+                    <div class="l-tab">
+                        <a href="javascript:;">志愿时</a>
+                    </div>
+                    <a href="volunteer.html" class="r-more">
+                        <span>更多</span>
+                        <img src="images/common/arrow-right.jpg" alt="">
+                    </a>
+                </div>
+                <div class="text-info">
+                    <script type="text/x-jsrender" id="zyzMsg">
+                        <span>志愿者累计达到<strong>{{:zyzsl}}</strong>个</span>
+                        <span>累计服务时长<strong>{{:ljfwsc}}</strong>万小时</span>
+                        <span>志愿者服务组织<strong>{{:zyzzzsl}}</strong>个</span>
+                    </script>
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <li>
+                            <a href="volunteer.html?type=1">
+                                <img src="images/home/column1-tab1.jpg" alt="">
+                                <span>生态环保</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=2">
+                                <img src="images/home/column1-tab2.jpg" alt="">
+                                <span>动物保护</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=3">
+                                <img src="images/home/column1-tab3.jpg" alt="">
+                                <span>儿童关怀</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=4">
+                                <img src="images/home/column1-tab4.jpg" alt="">
+                                <span>文化艺术</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=5">
+                                <img src="images/home/column1-tab5.jpg" alt="">
+                                <span>支教助学</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=6">
+                                <img src="images/home/column1-tab6.jpg" alt="">
+                                <span>扶老助贫</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer.html?type=7">
+                                <img src="images/home/column1-tab7.jpg" alt="">
+                                <span>综合其它</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-list">
+                    <script type="text/x-jsrender" id="zysList">
+                    {{for}}
+                        {{if #getIndex() == 3}}
+                            <div class="read" style="margin-right:0px;">
+                            {{else}}
+                            <div class="read">
+                        {{/if}}
+                            <a href="{{:lj}}">
+                                {{if #data.tp !== null}}
+                                <img src="{{:#data.tp}}" alt="">
+                                {{else}}
+                                <img src="images/common/noPic.jpg" alt="">
+                                {{/if}}
+                                {{if #data.fl === "1"}}
+                                <span>进行中</span>
+                                {{else}}
+                                <span>已结束</span>
+                                {{/if}}
+                                <p>{{:bt}}</p>
+                            </a>
+                        </div>
+                    {{/for}}
+                    </script>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="title">
+                    <div class="l-tab">
+                        <a href="javascript:;" class="active">青创汇就业</a>
+                        <a href="javascript:;" style="margin-left: 20px;">青创汇创业</a>
+                    </div>
+                    <a href="youth.html" class="r-more">
+                        <span>更多</span>
+                        <img src="images/common/arrow-right.jpg" alt="">
+                    </a>
+                </div>
+                <div class="text-info">
+                    <script type="text/x-jsrender" id="qcMsg">
+                        <span>注册风投用户<strong>{{:ftyhsl}}</strong>个</span>
+                        <span>开设孵化基地<strong>{{:fhjdsl}}</strong>个</span>
+                        <span>提供基地座位<strong>{{:jdzwsl}}</strong>个</span>
+                    </script>
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <li>
+                            <a target="_blank" href="https://www.gz12355.net/UInnovation/front/portalController/toNewProjectListIndex.do?index=8">
+                                <img src="images/home/column2-tab1.jpg" alt="">
+                                <span>找项目</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.gz12355.net/UInnovation/front/portalController/mapGD.do?index=9">
+                                <img src="images/home/column2-tab2.jpg" alt="">
+                                <span>找基地</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.gz12355.net/UInnovation/front/portalController/toNewProjectListIndex.do?index=8">
+                                <img src="images/home/column2-tab3.jpg" alt="">
+                                <span>找融资</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab4.jpg" alt="">
+                                <span>政项申报</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab5.jpg" alt="">
+                                <span>创业培训</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.gz12355.net/UInnovation/front/portalController/youthClassIndex.do?index=11">
+                                <img src="images/home/column2-tab6.jpg" alt="">
+                                <span>青创班</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-list">
+                    <script type="text/x-jsrender" id="qchList">
+                        {{for}}
+                        {{if #getIndex() == 3}}
+                        <div class="read" style="margin-right:0">
+                        {{else}}
+                        <div class="read">
+                        {{/if}}
+                            <a href="#">
+                                <div>
+                                    {{if #data.tp !== null}}
+                                    <img src="{{:#data.tp}}" alt="">
+                                    {{else}}
+                                    <img src="images/common/noPic.jpg" alt="">
+                                    {{/if}}
+                                </div>
+                                {{if #data.zt == 1}}
+                                <span>进行中</span>
+                                {{else}}
+                                <span>已结束</span>
+                                {{/if}}
+                                <p>{{:bt}}</p>
+                            </a>
+                        </div>
+                        {{/for}}
+                    </script>
+                    <!-- <div class="read">
+                        <a href="#">
+                            <div>
+                                <img src="images/home/column1-main1.jpg" alt="">
+                            </div>
+                            <span>进行中</span>
+                            <p>凯粤湾阅读会第20期</p>
+                        </a>
+                    </div> -->
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="column3">
+                <div class="title">
+                    <div class="l-tab">
+                        <a href="javascript:;">U友缘</a>
+                    </div>
+                    <a href="activity.html" class="r-more">
+                        <span>更多</span>
+                        <img src="images/common/arrow-right.jpg" alt="">
+                    </a>
+                </div>
+                <div class="text-info">
+                    <script type="text/x-jsrender" id="uuyMsg">
+                        <span>本月开展活动<strong>{{:kzhdcs}}</strong>个</span>
+                        <span>本月报名男会员<strong>{{:mhysl}}</strong>个</span>
+                        <span>本月报名女会员<strong>{{:whysl}}</strong>个</span>
+                        <span>本月活跃会员<strong>{{:hyhysl}}</strong>个</span>
+                    </script>
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab1.jpg" alt="">
+                                <span>活动广场</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab2.jpg" alt="">
+                                <span>推荐活动</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab3.jpg" alt="">
+                                <span>相遇</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="http://www.020love.com.cn/user/login?backurl=http%3A%2F%2Fwww.020love.com.cn%2Fevent%2Flists">
+                                <img src="images/home/column2-tab4.jpg" alt="">
+                                <span>秀青春</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="images/home/column2-tab5.jpg" alt="">
+                                <span>动态</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="img-list">
+                    <script type="text/x-jsrender" id="uuyList">
+                        {{for}}
+                        {{if #getIndex() === 1}}
+                        <div class="read" style="margin-right:0px;">
+                        {{else}}
+                        <div class="read">
+                        {{/if}}
+                            <a href="#">
+                                <div>
+                                    {{if #data.tp}}
+                                    <img src="{{:#data.tp}}" alt="">
+                                    {{else}}
+                                    <img src="images/common/noPic.jpg" alt="">
+                                    {{/if}}
+                                </div>
+                                {{if #data.zt === "1"}}
+                                <span>进行中</span>
+                                {{else}}
+                                <span>已结束</span>
+                                {{/if}}
+                                <p>{{:bt.split('|')[0]}}<em>|</em>{{:bt.split('|')[1]}}</p>
+                            </a>
+                        </div>
+                        {{/for}}
+                    </script>
+                    <!-- <p>炼爱学堂<em>|</em>完美主义者的升级</p> -->
+                    <!-- <div class="read" style="margin-right: 0;">
+                        <a href="#">
+                            <img src="images/home/column3-main1.jpg" alt="">
+                            <span>进行中</span>
+                            <p>炼爱学堂<em>|</em>完美主义者的升级</p>
+                        </a>
+                    </div> -->
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <div class="column4">
+                 <div class="title">
+                    <div class="l-tab">
+                        <a href="javascript:;">团务资讯</a>
+                    </div>
+                    <a href="javascript:void(0)" class="r-more">
+                        <span>更多</span>
+                        <img src="images/common/arrow-right.jpg" alt="">
+                    </a>
+                </div>
+                <div class="news">
+                    <ul>
+                        <script type="text/x-jsrender" id="tzggList">
+                            <li>
+                                <img src="images/home/column4-tab1.jpg" alt="">
+                                <h3>通知公告</h3>
+                                {{for tzgg}}
+                                <a target="_blank" href="{{:lj}}">{{:#getIndex()+1}}.{{:bt}}</a>
+                                {{/for}}
+                            </li>
+                        </script>
+                        <script type="text/x-jsrender" id="wjzlList">
+                            <li>
+                                <img src="images/home/column4-tab2.jpg" alt="">
+                                <h3>文件资料</h3>
+                                {{for wjzl}}
+                                <a target="_blank" href="{{:lj}}">{{:#getIndex()+1}}.{{:bt}}</a>
+                                {{/for}}
+                            </li>
+                        </script>
+                        <script type="text/x-jsrender" id="bmgzList">
+                            <li>
+                                <img src="images/home/column4-tab3.jpg" alt="">
+                                <h3>部门工作</h3>
+                                {{for bmgz}}
+                                <a target="_blank" href="{{:lj}}">{{:#getIndex()+1}}.{{:bt}}</a>
+                                {{/for}}
+                            </li>
+                        </script>
+                        <script type="text/x-jsrender" id="zsdwkxList">
+                            <li style="margin-right: 0">
+                                <img src="images/home/column4-tab4.jpg" alt="">
+                                <h3>直属单位快讯</h3>
+                                {{for zsdwkx}}
+                                <a target="_blank" href="{{:lj}}">{{:#getIndex()+1}}.{{:bt}}</a>
+                                {{/for}}
+                            </li>
+                        </script>
+                    </ul>
+                    <div style="clear: both"></div> 
+                </div>
+            </div>
+            <div class="column5">
+                <div class="title">
+                    <div class="l-tab">
+                        <a href="javascript:;">论坛</a>
+                    </div>
+                    <a href="#" class="r-more">
+                        <span>更多</span>
+                        <img src="images/common/arrow-right.jpg" alt="">
+                    </a>
+                </div>
+                <div class="forum-wrapper">
+                    <div class="forum-left">
+                        <div class="recommend">
+                            <h3>推荐板块</h3>
+                            <ul>
+                                <li><a href="#"><img src="images/home/column5-tab1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/home/column5-tab2.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/home/column5-tab3.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/home/column5-tab1.jpg" alt=""></a></li>
+                                <li><a href="#"><img src="images/home/column5-tab2.jpg" alt=""></a></li>
+                                <li style="margin-right:0;"><a href="#"><img src="images/home/column5-tab3.jpg" alt=""></a></li>
+                            </ul>
+                            <div style="clear: both"></div>
+                        </div>
+                        <div class="user-list">
+                            <h3>活跃用户</h3>
+                            <script type="text/x-jsrender" id="forumBriskUser">
+                                <ul>
+                                    {{if #getIndex() == 3}}
+                                    <li style="margin-right:0px;">
+                                    {{else}}
+                                    <li>
+                                    {{/if}}
+                                        <a href="#">
+                                            <img src="images/home/column5-tab4.png" alt="">
+                                            <p>{{:hymc}}</p>
+                                            <span>发帖数：{{:ftsl}}</span>
+                                            <strong>回复数：{{:hfsl}}</strong>
+                                        </a>
+                                    </li>
+                                <ul>
+                            </script>
+                            <!-- <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/home/column5-tab4.png" alt="">
+                                        <p>小星星爱志愿</p>
+                                        <span>发布主题</span>
+                                        <strong>9999</strong>
+                                    </a>
+                                </li>
+                            </ul> -->
+                        </div>
+                    </div>
+                    <div class="forum-right">
+                        <div class="hot">
+                            <h3>论坛热帖</h3>
+                            <ul>
+                                <script type="text/x-jsrender" id="hotBBs">
+                                    {{for}}
+                                    {{if #getIndex() <= 2}}
+                                    <li class="list-top">
+                                    {{else}}
+                                    <li>
+                                    {{/if}}
+                                        <a target="_blank" href="{{:lj}}"><strong>{{:#getIndex()+1}}</strong>{{:bt}}</a>
+                                    </li>
+                                    {{/for}}
+                                </script>
+                                
+                                <!-- <li class="list-top"><a href="#"><strong>2</strong>如何判定社会新青年价值？</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="wrapper">
+            <div class="blogroll">
+                <h3>友情链接</h3>
+                <ul>
+                    <li><a href="#">U友缘</a></li>
+                    <li><a href="#">U友缘</a></li>
+                    <li><a href="#">U友缘</a></li>
+                    <li><a href="#">U友缘</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+            <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+        </div>
+    </div>
+    
+</body>
+</html>

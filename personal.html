@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>广州网上共青团</title>
+    <link rel="stylesheet" href="css/common/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link type="text/css" rel="stylesheet" href="css/bt/index.css"/>
+    <link rel="stylesheet" href="css/bt/gr.css">
+    <link rel="stylesheet" href="css/bt/zhongxin.css">
+    <link rel="stylesheet" href="css/bt/gr.css">
+    <script src="js/common/jquery-1.8.3.js"></script>
+    <script src="js/common/jsrender.min.js"></script>
+    <script src="js/morejs/index.js"></script>
+    <script src="js/morejs/person.js"></script>
+    <script src="js/common/common.js"></script>
+    <script src="js/common/jquery.sPage.js"></script>
+    <script src="js/common/jquery.cookie.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="top">
+            <div class="top-wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="images/common/logo.jpg" alt=""></a>
+                </div>
+                <div class="r-linkbox">
+                    <ul>
+                        <li><a href="javascript:;"><img src="images/common/wechat.jpg" alt=""></a></li>
+                        <li><a href="javascript:ssoLogout();"><img src="images/common/sina.jpg" alt=""></a></li>
+                        <li><a href="personal.html;"><img src="images/common/user.jpg" alt=""></a></li>
+                    </ul>
+                    <img class="wechat_code" src="images/common/wechat_code.png" alt="">
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="nav-wrapper">
+                <div class="nav-list">
+                    <ul>
+                        <li class="active"><a href="index.html">首页</a></li>
+                        <li><a href="volunteer.html">志愿时</a></li>
+                        <li><a href="youth.html">青创汇</a></li>
+                        <li><a href="activity.html">U友缘</a></li>
+                        <li><a target="_blank" href="gzqn/index.html">广州青年</a></li>
+                        <li><a target="_blank" href="http://www.gdcyl.org/Index.html">团务系统</a></li>
+                        <li><a href="forum.html">论坛</a></li>
+                    </ul>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="输入需要查找的信息">
+                    <a href="javascript:;"><img src="images/common/search.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+		        <div class="w-1200">
+            <div class="tx-bj">
+            <div class="pp-left">
+                <div class="top-two">
+                  <ul class="gr-list">
+                      <li class="gr-list-li" style="position: relative;">
+                          <div class="gr-pic"><img src="images/pic/xpic.png" alt=""></div>
+                          <a href="javascript:;" class="gr-list-a gr-zx red-color">个人中心</a>
+                        </li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">我的申请</a></li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">我的事务</a></li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">我的收藏</a></li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">我的互动</a></li>
+                      <li class="gr-list-li"><a href="myluntan.html" class="gr-list-a">我的论坛</a></li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">个人资料</a></li>
+                      <li class="gr-list-li"><a href="javascript:;" class="gr-list-a">常用工具</a></li>
+                  </ul>
+                </div>
+                <div class="top-three">
+                  <ul style="width:80%;margin:0 auto;">
+                      <li style="border-bottom:1px dashed #eee;" class="left-pic">
+                        <a href="" style="display: inline-block;color:#000;line-height:40px;font-weight:700;" >快速通道</a></li>
+                      <li class="left-pic">
+                          <div class="box-twos"><a href="" class="box-s"><img src="images/pic/uy.png" alt="" class="four-pic"></a><p class="zy">U友缘</p></div>
+                          <div class="box-twos"><a href="" class="box-s"><img src="images/pic/zys.png" alt="" class="four-pic"></a><p class="zy">志愿时</p></div>
+                      </li>
+                      <li class="left-pic">
+                            <div class="box-twos"><a href="" class="box-s"><img src="images/pic/qc.png" alt="" class="four-pic"></a><p class="zy">青创汇</p></div>
+                            <div class="box-twos"><a href="" class="box-s"><img src="images/pic/tw.png" alt="" class="four-pic"></a><p class="zy">团务系统</p></div>
+                        </li>
+                  </ul>
+                </div>
+            </div>
+            <!--**************************************** 个人中心************************************* -->
+            <div style="overflow: hidden; width:100%;height:auto;">
+            <div class="pp-rights">
+                <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>个人中心</p>
+                <div style="display: flex;">
+                  <div class="rt-pics"><img src="images/pic/pic.png" alt="" id="rt-pic-src"></div>
+                  <div class="bottom-list">
+                  <div class="name ">
+                      <p class="wf"> &nbsp;&nbsp;&nbsp;&nbsp;</p>
+                      <p class="fw">欢迎访问个人中心！</p>
+                  </div>
+                  <ul class="gz-five">
+                      <li class="gz-list-five">广州市统一认证用户</li>
+                      <li class="gz-list-five">青创汇普通用户</li>
+                      <li class="gz-list-five">U友缘会员</li>
+                      <li class="gz-list-five">志愿者</li>
+                      <li class="gz-list-five">团员</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="bottom-ul">
+                    <ul class="zys-ul">
+                        <li class="zys-li">
+                            <p class="zys-li-p f-wt"> <span class="fk "></span>&nbsp;志愿时</p>
+                            <p class="zys-li-p">参与志愿活动<span class="times-red cyzyhdcs"></span>次</p>
+                            <p class="zys-li-p">感兴趣志愿活动<span class="times-red gxqhdcs"></span>个</p>
+                            <p class="zys-li-p">志愿时长<span class="times-red zysc"></span>小时</p>
+                        </li>
+                        <li class="zys-li">
+                                <p class="zys-li-p f-wt"><span class="fk"></span>&nbsp;青创汇</p>
+                                <p class="zys-li-p">参与创业活动<span class="times-red cycyhd"></span>次</p>
+                                <p class="zys-li-p">参与就业活动<span class="times-red cyjyhdcs"></span>次</p>
+                                <p class="zys-li-p">发布创业项目<span class="times-red fbcyxmcs"></span>个</p>
+                                <p class="zys-li-p">线上投递简历<span class="times-red tdjlcs"></span>次</p>
+                            </li>
+                            <li class="zys-li">
+                                    <p class="zys-li-p f-wt"><span class="fk"></span>&nbsp;U友缘</p>
+                                    <p class="zys-li-p">参与U友缘活动<span class="times-red uyyhdcs"></span>次</p>
+                                    <p class="zys-li-p">发布个人动态<span class="times-red fbgrdtcs"></span>条</p>
+                                </li>
+                                <li class="zys-li">
+                                        <p class="zys-li-p f-wt"><span class="fk"></span>&nbsp;互动与讨论</p>
+                                        <p class="zys-li-p">提交基层民意<span class="times-red tjjcmycs"></span>次</p>
+                                        <p class="zys-li-p">提交书记邮箱<span class="times-red tjsjyxcs"></span>次</p>
+                                        <p class="zys-li-p">发表主题帖<span class="times-red fbzttcs"></span>次</p>
+                                        <p class="zys-li-p">回复主题帖<span class="times-red hfzttcs"></span>次</p>
+                                    </li>
+            
+                    </ul>
+                </div>
+            </div>
+            <!--**************************************** 我的申请******************************************** -->
+            <div class="pp-rights" style="display: none;">
+                    <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>我的申请</p>
+                <div class="sx-bigbox-list">
+                    <div class="sx-title">
+                        <ul class="sx-list">
+                            <li class="sx-list-li">标题</li>
+                            <li class="sx-list-li">状态</li>
+                            <li class="sx-list-li">发布时间</li>
+                        </ul>
+                    </div>
+                    <div class="sx-zys">
+                        <ul style="border: none;" class="person-pro">
+                        <script type="text/x-jsrender" id="zyzhdList">
+                            {{for}}
+                            <li class="sx-zys-list">
+                                <p class="sx-zys-p   cont-left">&nbsp;•[{{:ly}}]{{:bt}}</p>
+                                <p class="sx-zys-p">{{:zt}}</p>
+                                <p class="sx-zys-p">{{:fbsj}}</p>
+                            </li>
+                            {{/for}}
+                            </script>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+           <!-- <div style="overflow: hidden; width:100%;height:400px;"> -->
+          
+        <!--********************************* 我的事务****************************** -->
+        <div class="pp-rights" style="display: none;" id="tesk-list">
+                <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>我的事务</p>
+            <div class="sx-title">
+                <ul class="sx-list">
+                    <li class="sx-list-li">标题</li>
+                    <li class="sx-list-li">状态</li>
+                    <li class="sx-list-li">发布时间</li>
+                </ul>
+            </div>
+            <div class="sx-zys" id="tesk-if">
+                <ul style="border: none;" class="test-list">
+                    <script type="text/x-jsrender" id="testList">
+                    {{for}}
+                    <li class="sx-zys-list">
+                        <p class="sx-zys-p" style="text-align:left;"> <span class="red-box"></span>&nbsp;[{{:ly}}]{{:bt}}</p>
+                        <p class="sx-zys-p" id="tesk-iflist">{{:zt}}</p>
+                        <p class="sx-zys-p">{{:fbsj}}</p>
+                    </li>
+                    {{/for}}
+                </script>
+                </ul>
+            </div>
+        </div>
+    <!--******************************** 我的收藏******************************* -->
+
+    <div class="pp-rights" style="display: none;">
+            <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>我的收藏</p>
+        <div class="sx-bigbox-list">
+            <div class="sx-title">
+                <ul class="sx-list">
+                    <li class="sx-list-li">标题</li>
+                    <li class="sx-list-li">发布时间</li>
+                </ul>
+            </div>
+            <div class="sx-zys">
+                <ul style="border: none;" class="collect-pro">
+                <script type="text/x-jsrender" id="collectList">
+                    {{for}}
+                    <li class="sx-zys-list">
+                        <p class="sx-zys-p cont-left"> •{{:title}}</p>
+                        <p class="sx-zys-p">{{:createTime}}</p>
+                    </li>
+                    {{/for}}
+                </script>
+                </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- ****************************我的互动************************************ -->
+        <div class="pp-rights" style="display: none; margin-top:10px;">
+            <div class="sx-bigbox-list">
+                    <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>我的互动</p>
+            <div class="sx-title">
+                <ul class="sx-list">
+                    <li class="sx-list-li">标题</li>
+                    <li class="sx-list-li">类型</li>
+                    <li class="sx-list-li">状态</li>
+                    <li class="sx-list-li">发布时间</li>
+                </ul>
+            </div>
+            <div class="sx-zys">
+                <ul style="border: none;" class="hudong">
+                    <script type="text/x-jsrender" id="hdlist">
+                    {{for}}
+                    <li class="sx-zys-list">
+                        <p class="sx-zys-p cont-left"> <span class="red-box"></span>&nbsp;{{:title}}</p>
+                        <p class="sx-zys-p">{{:type}}</p>
+                        <p class="sx-zys-p">{{:zt}}</p>
+                        <p class="sx-zys-p">{{:createTime}}</p>
+                    </li>
+                    {{/for}}
+                </script>
+                </ul>
+            </div>
+            </div>
+            <div class="hd-box-title" style="display: none;">
+                    <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>我的互动</p>
+                    <div class="hd-big-box">
+                      <p class="tw-title">团市委回复内容</p>
+                      <div class="neirong-box">
+                          为深入开展党的群众路线教育实践活动
+                          ，广泛征求群众和各方面度团市委激发JFK大家宽大楼房打卡机打发打发打
+                          为深入开展党的群众路线教育实践活动
+                          ，广泛征求群众和各方面度团市委激发发v大幅fsafafadfjkl
+                      </div>
+                    </div>
+                    <div class="tw-bottom-box">
+                        为深入开展党的群众路线教育实践活动
+                          ，广泛征求群众和各方面度团市委激发JFK大家宽大楼房打卡机打发打发打发v大幅
+                          fsafafadfjkl  为深入开展党的群众路线教育实践活动
+                          ，广泛征求群众和各方面度团市委激发
+                    </div>
+                    <div class="qnqz-sugges">
+                        <div  style="display: flex;">
+                            <span class="qnqz-box-red"></span>
+                            <p class="qnqz-one-title">1. 对新形势下做好青年群众的意见及建议</p>
+                        </div>
+                        <div style="padding-left:30px;padding-right:30px;">
+                        <input type="text" placeholder="我的建议文本" class="input-title">
+                       </div>
+                       <div  style="display: flex;margin-top:30px;">
+                            <span class="qnqz-box-red"></span>
+                            <p class="qnqz-one-title">2. 对新形势下做好青年群众的意见及建议</p>
+                        </div>
+                        <div style="padding-left:30px;padding-right:30px;">
+                        <input type="text" placeholder="我的建议文本" class="input-title">
+                       </div>
+                       <div  style="display: flex;margin-top:30px;">
+                            <span class="qnqz-box-red"></span>
+                            <p class="qnqz-one-title">3. 对新形势下做好青年群众的意见及建议</p>
+                        </div>
+                        <div style="padding-left:30px;padding-right:30px;">
+                        <input type="text" placeholder="我的建议文本" class="input-title">
+                       </div>
+                       <div  style="display: flex;margin-top:30px;">
+                            <span class="qnqz-box-red"></span>
+                            <p class="qnqz-one-title">4. 对新形势下做好青年群众的意见及建议</p>
+                        </div>
+                        <div style="padding-left:30px;padding-right:30px;">
+                        <input type="text" placeholder="我的建议文本" class="input-title">
+                       </div>
+                       <div  style="display: flex;margin-top:30px;">
+                            <span class="qnqz-box-red"></span>
+                            <p class="qnqz-one-title">5. 对新形势下做好青年群众的意见及建议</p>
+                        </div>
+                        <div style="padding-left:30px;padding-right:30px;">
+                        <input type="text" placeholder="我的建议文本" class="input-title">
+                       </div>
+                    </div>
+                    <div class="pepole-name">
+                        <div class="pp-name glyphicon glyphicon-user">
+                            <span>姓名：陈晓燕</span>
+                        </div>
+                        <div class="pp-name glyphicon glyphicon-phone">
+                            <span>电话：1796789876789</span>
+                        </div>
+                        <div class="pp-name glyphicon glyphicon-envelope">
+                            <span>邮箱：34567876543</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- *****************************我的论坛*************************************************** -->
+        <div class="pp-rights" style="display: none;">
+            <div>
+                <!-- 我的论坛 -->
+            </div>
+        </div>
+
+ <!-- ************************************个人资料*************************************************** -->
+ <div class="pp-rights"  style="display: none;">
+        <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span><span id="info">个人资料</span></p>
+     <div class="watch-list">
+        <div style="display: flex; font-size: 16px;border-bottom: 1px dashed #e70012;padding-bottom:10px;">
+            <!-- <div class="click-btn"> -->
+            <div class="grtx active1 grtxs">基本信息</div>
+            <div class="grtx grtxs">个人头像</div>
+        <!-- </div> -->
+            <div class="bj-right gr grtxs">
+                <span style="border-bottom:1px solid #58c0a4">编辑</span>
+                <img src="images/pic/bianji.png" alt="" style="width:15px;height:15px;">
+            </div>
+        </div>
+        <div class="zl-box-list-bigbox">
+         <ul class="zl-box" id="inform">
+                <script type="text/x-jsrender" id="userInfor">
+                    {{for}}
+             <li class="zl-box-list">
+                <span class="zl-top">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</span> 
+                <span class="zl-bottom">{{:nc}}</span>
+             </li>
+             <li class="zl-box-list">
+                 <span class="zl-top">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</span>
+                 <span class="zl-bottom">{{:xm}}</span>
+             </li>
+             <li class="zl-box-list">
+                 <span class="zl-top">手机号码：</span>
+                 <span class="zl-bottom">{{:ms}}</span>
+             </li>
+             <li class="zl-box-list">
+                    <span class="zl-top">身&nbsp;&nbsp;份&nbsp;&nbsp;证：</span>
+                    <span class="zl-bottom">{{:zjhm}}</span>
+                </li>
+              <li class="zl-box-list">
+                    <span class="zl-top">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>
+                    <span class="zl-bottom">{{:dz}}</span>
+              </li>
+              <li class="zl-box-list">
+                    <span class="zl-top">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span>
+                    <span class="zl-bottom">{{:yx}}</span>
+                </li>
+                {{/for}}
+            </script>
+         </ul>
+         <!-- ***********************图片下载****************** -->
+         <ul class="zl-box" style="display: none;">
+              <li class="tpsc-list differnt-title">选择本地照片，上传编辑自己的头像</li>
+              <li class="tpsc-list tpsc-list-df">
+                  <div class="collrct-pic"><input type="file"></div>
+                  <div style="margin-left: 20px;margin-top: 10px">
+                      <p class="ys-color">支持jpg、png格式的图片</p>
+                      <p class="ys-color">请上传2M以下，像素150*150以上图片，以保证头像清晰度</p>
+                  </div>
+              </li>
+              <li class="tpsc-list txyl">头像预览</li>
+              <li class="tp-look">
+                  <div style="width: 150px;height:150px;margin-left:30px;">
+                      <img src="" alt="" class="w-h150 pic-1-8">
+                      <p class="pic-150">150*150</p>
+                    </div>
+                  <div style="width: 80px;height: 80px;margin-left:30px;">
+                      <img src="" alt="" class="w-h80 pic-1-8">
+                      <p class="pic-80">80*80</p>
+                    </div>
+              </li>
+              <li>
+                  <div class=" xgbc-yss"> <img src="images/pic/save.png">保存</div>
+              </li>
+            </ul>
+         <!-- ***********************填写信息******************* -->
+         <ul class="zl-box" style="display: none;" id="userInfoForm">
+            <form id="information">
+                <li class="zl-box-list">
+                   <span class="zl-topS">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</span> 
+                   <input  class="zl-bottoms" placeholder="请输入昵称" id="nc">
+                </li>
+                <li class="zl-box-list">
+                    <span class="zl-topS">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span>
+                    <input class="zl-bottoms" placeholder="请输入姓名" id="xm">
+                </li>
+                <li class="zl-box-list">
+                    <span class="zl-topS">手机号码：</span>
+                    <input  class="zl-bottoms" placeholder="请输入手机号码" id="ms">
+                </li>
+                <li class="zl-box-list">
+                       <span class="zl-topS">身&nbsp;&nbsp;份&nbsp;&nbsp;证：</span>
+                       <input class="zl-bottoms" placeholder="请输入省份证" id="zjhm">
+                   </li>
+                 <li class="zl-box-list">
+                       <span class="zl-topS">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</span>
+                       <input class="zl-bottoms" placeholder="请输入地址" id="dz">
+                 </li>
+                 <li class="zl-box-list">
+                       <span class="zl-topS">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</span>
+                       <input class="zl-bottoms" placeholder="请输入邮箱" id="yx">
+                   </li>
+                   <li>
+                        <div class="xgbc-ysss" id="submitBtn"><img src="images/pic/save.png"> 保存</div>
+                    </li>
+                </form>
+            </ul>
+     
+        </div>
+    </div>
+</div>
+<script>
+</script>
+<!--************************* 常用工具************************* -->
+<div class="pp-rights" style="display: none;">
+        <p style="color:#e70012;font-weight: 400;padding-top:20px;padding-bottom:20px;"><span style="color:#ccc;">当前位置：&nbsp;&nbsp;</span>常用工具</p>
+    <div>
+        <ul style="width: 100%;">
+            <li class="gongju">
+                <a href="http://tq.360.cn/"  target="_blank" class="gongju-a">
+                <img src="images/common/noPic.jpg" alt="" class="gongju-pic">
+                <p style="text-align: center;">天气预报查询</p>
+                </a>
+            </li>
+            <li class="gongju">
+                <a href="https://www.rili.com.cn/"  target="_blank" class="gongju-a">
+                <img src="images/common/noPic.jpg" alt="" class="gongju-pic">
+                <p style="text-align: center;">日历查询</p>
+                </a>
+            </li>
+            <li class="gongju">
+                <a href="https://www.csair.com/cn/index.shtml?WT.mc_id=sem-baidu-pkw-pa01-AG1-15-8296&WT.srch=1&gclid=CKmet_aL1t4CFRFwvAod380AYw&gclsrc=ds"  target="_blank" class="gongju-a">
+                <img src="images/common/noPic.jpg" alt="" class="gongju-pic">
+                <p style="text-align: center;">航班查询</p>
+                </a>
+            </li>
+            <li class="gongju">
+                <a href="https://www.8684.cn/ "  target="_blank" class="gongju-a">
+                <img src="images/common/noPic.jpg" alt="" class="gongju-pic">
+                <p style="text-align: center;">公交查询</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+    </div>
+    </div>
+</div>	   
+    <div id="footer">
+        <div class="copyright">
+            <p>版权所有：共青团广州市委员会网站备案号：粤ICP备11043362号-2</p>
+            <p>地址:广州市人民北路875号4-5楼   邮编:510170  E-mail:1234556@163.com</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+.myluntan-ul{
+  width: 100%;
+}
+.myluntan-li{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+.luntan-pic{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #eee;
+}
+.myluntan-user,.myluntan-gz{
+  margin-left: 10px;
+  color: #333;
+  line-height: 50px;
+}
+.myluntan-user-p{
+  text-align: center;
+}
+.myluntan-user-ul{
+  width: 100%;
+}
+.myluntan-user-li{
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+}
+.myluntan-user-pic{
+  margin: 0 auto;
+  display: block;
+}
